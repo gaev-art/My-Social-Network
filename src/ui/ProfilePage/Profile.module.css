@@ -1,3 +1,35 @@
-.main{
-    text-align: center;
+.main {
+    text-align: left;
+}
+
+.profile {
+    height: 100vh;
+}
+
+.lookingForAJob {
+    width: 40px;
+    height: 40px;
+    padding-left: 10px;
+    vertical-align: middle;
+}
+
+.descriptionBlock {
+    padding: 10px;
+}
+
+.contact {
+    padding-left: 10px;
+}
+
+.formSummaryError {
+    border: red 1px solid;
+    padding: 5px;
+    color: indianred;
+}
+
+.avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
+
 }

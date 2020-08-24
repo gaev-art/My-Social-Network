@@ -1,4 +1,4 @@
-import {UsersApi} from '../dall/usersApi';
+import {usersApi} from '../dall/usersApi';
 
 
 export const FOLLOW = 'SOCIAL_NETWORK/USERS/FOLLOW';
@@ -125,7 +125,7 @@ export const getUsers = (newPage) => async (dispatch, getState) => {
     dispatch(setCurrentPage(newPage))
     const {currentPage, pageSize, searchName} = getState().usersPage
     dispatch(toggleIsFetching(true))
-    let response = await UsersApi.getUsers(currentPage || newPage, pageSize, searchName)
+    let response = await usersApi.getUsers(currentPage || newPage, pageSize, searchName)
     dispatch(toggleIsFetching(false))
     dispatch(setUsers(response.items))
     dispatch(setTotalUsersCount(response.totalCount))
@@ -141,7 +141,7 @@ export const searchName = (searchName) => async (dispatch, getState) => {
 
 export const follow = (userId) => async (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId))
-    let response = await UsersApi.follow(userId)
+    let response = await usersApi.follow(userId)
     if (response.data.resultCode === 0) {
         dispatch(followSuccess(userId))
     }
@@ -150,7 +150,7 @@ export const follow = (userId) => async (dispatch) => {
 
 export const unFollow = (userId) => async (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId))
-    let response = await UsersApi.unFollow(userId)
+    let response = await usersApi.unFollow(userId)
     if (response.data.resultCode === 0) {
         dispatch(unFollowSuccess(userId))
     }

@@ -1,7 +1,7 @@
 import {instance} from './instance';
 
 
-export const UsersApi = {
+export const usersApi = {
     getUsers(currentPage, pageSize, searchName) {
         return instance.get(`users?`
             + (searchName  ? `term=${searchName}&` : '')

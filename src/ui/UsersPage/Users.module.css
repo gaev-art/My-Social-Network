@@ -2,3 +2,17 @@
     text-align: center;
 }
 
+.users {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user {
+
+}
+
+.img {
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+}

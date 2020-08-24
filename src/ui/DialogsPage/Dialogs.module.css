@@ -1,3 +1,69 @@
-.main {
-    text-align: center;
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    /*height: 100vh;*/
 }
+
+.dialogsItems{
+    padding: 10px;
+}
+.dialogsItems a {
+    /*padding: 10px;*/
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    margin-top: 5px;
+    padding: 5px;
+    vertical-align: middle;
+
+
+
+}
+
+.dialogsItems a.activeLink {
+    /*border: black solid 1px;*/
+    color: gold;
+
+}
+
+
+
+.messages {
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+   /*display: flex;*/
+
+
+}
+
+.message{
+display: flex;
+    justify-content :flex-end;
+    flex-direction :column;
+    align-items: center;
+
+
+
+}
+
+.icon{
+    height: 20px;
+
+
+}
+
+.img {
+    width: 80px;
+
+    border-radius: 30px;
+}
+
+.newMessagesCount{
+
+    height: 30px;
+    vertical-align: middle;
+
+
+}
+

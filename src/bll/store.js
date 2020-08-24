@@ -4,10 +4,10 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import {reducer as formReducer} from 'redux-form';
 import {profileReducer} from './profileReducer';
 import {authReducer} from './authReducer';
-import {appReducer} from './appReduser';
+import {appReducer} from './appReduсer';
 import {usersReducer} from './usersReducer';
 import {friendsReducer} from './friendsReducer';
-import {dialogsReducer} from './dialogsReduser';
+import {dialogsReducer} from './dialogsReducer';
 
 const reducers = combineReducers({
     form: formReducer,

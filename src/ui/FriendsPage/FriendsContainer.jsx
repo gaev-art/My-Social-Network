@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getFriends, removeFriend} from '../../bll/friendsReducer';
 import {WithAuthRedirect} from '../Hoc/WithAuthRedirect';
 import {Friends} from './Friends';
+import {startDialogs} from '../../bll/dialogsReducer';
 
 
 const FriendsContainer = props => {
@@ -10,6 +11,10 @@ const FriendsContainer = props => {
     const loadingFriends = useSelector(state => state.friendsPage.loadingFriends)
 
     const dispatch = useDispatch();
+
+    const openDialogs = (friendsId) => {
+        dispatch(startDialogs(friendsId))
+    }
 
 
     const unFollowFriend = React.useCallback((friendId) => {
@@ -23,6 +28,7 @@ const FriendsContainer = props => {
 
     return <Friends
         unFollowFriend={unFollowFriend}
+        openDialogs={openDialogs}
         friends={friends}
         loadingFriends={loadingFriends}
     />

@@ -21,7 +21,10 @@ const FriendsItem = (props) => {
                     }}>
                     UnFollow
                 </button>
-
+                <button onClick={() => {
+                    props.openDialogs(props.friend.id)
+                }}>open dialog
+                </button>
 
             </div>
         </div>

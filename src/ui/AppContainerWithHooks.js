@@ -3,7 +3,7 @@ import App from './App';
 import {useDispatch, useSelector} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {compose} from 'redux';
-import {initializeApp} from '../bll/appReduser';
+import {initializeApp} from '../bll/appReduсer';
 import Preloader from './common/Preloader/Preloader';
 
 const AppContainerWithHooks = () => {

@@ -5,6 +5,7 @@ import ProfileDataForm from './ProfileData/ProfileDataForm';
 import {ProfileData} from './ProfileData/ProfileData';
 import ProfileStatus from './Status/ProfileStatus';
 import style from './Profile.module.css'
+import MyPostContainer from './MyPost/MyPostContainer';
 
 
 export const Profile = (props) => {
@@ -43,6 +44,7 @@ export const Profile = (props) => {
             <ProfileStatus
                 status={props.status}
                 updateStatus={props.updateStatus}/>
+                <MyPostContainer profile={props.profile}/>
         </div>
 
     )

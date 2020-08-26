@@ -29,13 +29,12 @@ const MyPost = React.memo((props) => {
 
     let postsElement = props.posts.map((p) =>
         <Post
-            deletePost={props.deletePost}
+            deletePost={props.deletePostsProfile}
+            fullName={props.fullName}
             photo={props.photo}
-            id={p.id}
             key={p.id}
-            message={p.message}
-            date={p.date}
-            likeCounts={p.likeCounts}/>)
+            post={p}
+           />)
 
 
     let addPost = (values) => {

@@ -42,17 +42,3 @@
     margin-top: 5px;
 }
 
-.time {
-    font-size: 12px;
-    /*width: 30px;*/
-    margin-left: 20px;
-    margin-top: 20px;
-
-
-
-}
-.mainTime {
-    display: flex;
-    justify-content: flex-start;
-
-}

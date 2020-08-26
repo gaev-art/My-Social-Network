@@ -8,17 +8,14 @@ const Post = (props) => {
     return (
         <div className={s.item}>
             <div className={s.Btn}>
-                <button onClick={()=>{props.deletePost(props.id)}}>x</button>
+                <button onClick={()=>{props.deletePost(props.post.id)}}>x</button>
             </div>
             <div>
                 <img src={props.photo}/>
-                <span className={s.text}>{props.message}</span>
-            </div>
-            <div className={s.mainTime}>
-                <p className={s.time}>{props.date}</p>
+                <span className={s.text}><b>{props.fullName} : </b>{props.post.message}</span>
             </div>
             <div className={s.mainLike}>
-                <span className={s.like}>like {props.likeCounts}</span>
+                <span className={s.like}>like {props.post.likeCounts}</span>
             </div>
         </div>
 

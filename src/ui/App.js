@@ -21,7 +21,7 @@ function App() {
                         <ProfileContainer userId={props.match.params.userId}/>}/>
                     <Route path='/users/:userId?' render={() => <UsersContainer/>}/>
                     <Route path='/friends' render={() => <FriendsContainer/>}/>
-                    <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                    <Route path='/dialogs' render={() => <DialogsContainer />}/>
                     <Route path='/login' render={() => <Login/>}/>
                 </Switch>
             </div>

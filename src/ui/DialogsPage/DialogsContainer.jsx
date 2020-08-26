@@ -28,7 +28,7 @@ class DialogsContainer extends React.Component {
     }
 
     addNewMessage = (values) => {
-        this.props.sendMessage(this.props.userId, values.newMessageBody)
+        this.props.sendMessage(this.props.currentDialogsId, values.newMessageBody)
     }
 
     deleteMessage = (messageId) => {

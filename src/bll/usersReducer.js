@@ -137,6 +137,7 @@ export const searchName = (searchName) => async (dispatch, getState) => {
     dispatch(setPortionNumber(1))
     const {currentPage} = getState().usersPage
     dispatch(getUsers(currentPage))
+
 }
 
 export const follow = (userId) => async (dispatch) => {

@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom';
 import {compose} from 'redux';
 import {initializeApp} from '../bll/appReduсer';
 import Preloader from './common/Preloader/Preloader';
+import {getNewMessages} from '../bll/dialogsReducer';
 
 const AppContainerWithHooks = () => {
 
@@ -14,6 +15,9 @@ const AppContainerWithHooks = () => {
 
     useEffect(() => {
         dispatch(initializeApp())
+        setInterval(() => {
+            dispatch(getNewMessages())
+        }, 10000)
     }, [dispatch])
 
 

@@ -1,4 +1,5 @@
 import {dialogsApi} from '../dall/dialogsApi';
+import {reset} from 'redux-form'
 
 
 const SET_MESSAGE = 'SOCIAL_NETWORK/DIALOGS/SET_MESSAGE';
@@ -137,6 +138,7 @@ export const sendMessage = (userId, body) => async (dispatch) => {
     dispatch(setMessageSuccess(response.data.message))
     dispatch(setCurrentDialogsId(userId))
     dispatch(startDialogs(userId))
+    dispatch(reset('dialogAddMessageForm'))
 }
 
 export const deleteMessage = (messageId) => async (dispatch) => {

@@ -9,11 +9,11 @@ import UsersContainer from './UsersPage/UsersContainer';
 import FriendsContainer from './FriendsPage/FriendsContainer';
 import DialogsContainer from './DialogsPage/DialogsContainer';
 
-function App() {
+function App(props) {
     return (
         <div className={style.appWrapper}>
             <HeaderContainer/>
-            <Navbar/>
+            <Navbar newMessagesCount={props.newMessagesCount}/>
             <div className={style.appWrapperContent}>
                 <Switch>
                     <Route exact path='/' render={() => <Redirect from="/" to="/profile"/>}/>

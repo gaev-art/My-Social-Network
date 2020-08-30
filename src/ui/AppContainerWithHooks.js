@@ -12,6 +12,7 @@ const AppContainerWithHooks = () => {
     const dispatch = useDispatch();
 
     const initialized = useSelector(state => state.app.initialized)
+    const newMessagesCount = useSelector(state => state.dialogsPage.newMessagesCount)
 
     useEffect(() => {
         dispatch(initializeApp())
@@ -25,7 +26,8 @@ const AppContainerWithHooks = () => {
         return <Preloader/>
     }
 
-    return <App/>
+    return <App
+        newMessagesCount={newMessagesCount}/>
 }
 export default compose(
     withRouter,

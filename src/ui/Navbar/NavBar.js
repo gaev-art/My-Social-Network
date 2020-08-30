@@ -15,6 +15,7 @@ export const Navbar = (props) => {
             <div className={s.item}>
                 <NavLink to='/dialogs' activeClassName={s.activeLink}>Dialogs
                 </NavLink>
+                {props.newMessagesCount > 0 && <div className={s.newMessagesCount}>{props.newMessagesCount} </div>}
             </div>
             <div className={s.item}>
                 <NavLink to='/users' activeClassName={s.activeLink}>Users</NavLink>

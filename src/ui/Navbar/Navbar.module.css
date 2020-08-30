@@ -18,3 +18,8 @@
 .item a.activeLink {
     color: gold;
 }
+.newMessagesCount {
+    padding: 2px;
+    border: red solid 1px;
+    background-color: #d08383;
+}

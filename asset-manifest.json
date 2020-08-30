@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/My-Social-Network/static/css/main.3d5b8868.chunk.css",
-    "main.js": "/My-Social-Network/static/js/main.f771dc58.chunk.js",
-    "main.js.map": "/My-Social-Network/static/js/main.f771dc58.chunk.js.map",
+    "main.css": "/My-Social-Network/static/css/main.bf63039a.chunk.css",
+    "main.js": "/My-Social-Network/static/js/main.a1125177.chunk.js",
+    "main.js.map": "/My-Social-Network/static/js/main.a1125177.chunk.js.map",
     "runtime-main.js": "/My-Social-Network/static/js/runtime-main.e7c54d80.js",
     "runtime-main.js.map": "/My-Social-Network/static/js/runtime-main.e7c54d80.js.map",
-    "static/js/2.2a9f7e02.chunk.js": "/My-Social-Network/static/js/2.2a9f7e02.chunk.js",
-    "static/js/2.2a9f7e02.chunk.js.map": "/My-Social-Network/static/js/2.2a9f7e02.chunk.js.map",
+    "static/js/2.882b07aa.chunk.js": "/My-Social-Network/static/js/2.882b07aa.chunk.js",
+    "static/js/2.882b07aa.chunk.js.map": "/My-Social-Network/static/js/2.882b07aa.chunk.js.map",
     "index.html": "/My-Social-Network/index.html",
-    "precache-manifest.d9f86b2751843ffeb0d8544676b905aa.js": "/My-Social-Network/precache-manifest.d9f86b2751843ffeb0d8544676b905aa.js",
+    "precache-manifest.c2c861c7825a48aed36d566de0c25d75.js": "/My-Social-Network/precache-manifest.c2c861c7825a48aed36d566de0c25d75.js",
     "service-worker.js": "/My-Social-Network/service-worker.js",
-    "static/css/main.3d5b8868.chunk.css.map": "/My-Social-Network/static/css/main.3d5b8868.chunk.css.map",
-    "static/js/2.2a9f7e02.chunk.js.LICENSE.txt": "/My-Social-Network/static/js/2.2a9f7e02.chunk.js.LICENSE.txt",
+    "static/css/main.bf63039a.chunk.css.map": "/My-Social-Network/static/css/main.bf63039a.chunk.css.map",
+    "static/js/2.882b07aa.chunk.js.LICENSE.txt": "/My-Social-Network/static/js/2.882b07aa.chunk.js.LICENSE.txt",
     "static/media/logo.png": "/My-Social-Network/static/media/logo.62af280a.png",
-    "static/media/newMessage.png": "/My-Social-Network/static/media/newMessage.4cd75386.png"
+    "static/media/newMessage.png": "/My-Social-Network/static/media/newMessage.4cd75386.png",
+    "static/media/preloader.gif": "/My-Social-Network/static/media/preloader.2fb6e0a7.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.e7c54d80.js",
-    "static/js/2.2a9f7e02.chunk.js",
-    "static/css/main.3d5b8868.chunk.css",
-    "static/js/main.f771dc58.chunk.js"
+    "static/js/2.882b07aa.chunk.js",
+    "static/css/main.bf63039a.chunk.css",
+    "static/js/main.a1125177.chunk.js"
   ]
 }

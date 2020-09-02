@@ -17,7 +17,7 @@ export const SET_SEARCH_NAME = 'SOCIAL_NETWORK/USERS/SET_SEARCH_NAME';
 let initialState = {
     users: [],
     friends: [],
-    pageSize: 100,
+    pageSize: 10,
     totalItemsCount: 0,
     currentPage: 1,
     isFetching: false,

@@ -1,14 +1,15 @@
 .appWrapper {
   display: grid;
   margin: 0 auto;
-  grid-template-areas: "h h" "n c";
+  grid-template-areas: "h" "c";
 
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 3fr 10fr;
+  grid-template-rows: 75px 1fr;
+  /*grid-template-columns: 1fr;*/
 
 }
 
 .appWrapperContent {
   grid-area: c;
+  text-align: center;
 
 }

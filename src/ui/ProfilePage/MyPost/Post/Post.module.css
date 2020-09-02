@@ -1,44 +1,36 @@
-.content {
-    grid-area: c;
-    background-color: cornflowerblue;
-    text-align: center;
 
-
-}
 .item {
-    color: black;
-    border: black solid 1px;
+    background-color: #ece9e9;
     margin: 5px;
-    width: 500px;
-    border-radius: 30px;
+    display: grid;
 
 }
 
 .item img {
     width: 80px;
     height: 80px;
-    border-radius: 30px;
+    border-radius: 50px;
+    background-color: yellow;
+
+
+
 }
 
 .text{
-    margin-left: 20px;
+    background-color: wheat;
+
 }
-.maineLake{
-    font-size: 9px;
-    /*width: 30px;*/
-}
+
 
 .like{
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 20px;
-
+    background-color: blueviolet;
+justify-content: flex-end;
 }
 
-.Btn{
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 20px;
-    margin-top: 5px;
+
+
+.Btn a{
+    background-color: red;
+
 }
 

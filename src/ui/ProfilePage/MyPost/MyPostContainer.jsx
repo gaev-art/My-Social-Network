@@ -1,4 +1,3 @@
-import React from 'react';
 import MyPost from "./MyPost";
 import {connect} from "react-redux";
 import {addPost, deletePostsProfile} from '../../../bll/profileReducer';

@@ -4,8 +4,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {compose} from 'redux';
 import {initializeApp} from '../bll/appReduсer';
-import Preloader from './common/Preloader/Preloader';
 import {getNewMessages} from '../bll/dialogsReducer';
+import Preloader from './common/Preloaders/Preloader';
 
 const AppContainerWithHooks = () => {
 

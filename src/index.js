@@ -2,17 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import {BrowserRouter} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {store} from './bll/store';
 import AppContainerWithHooks from './ui/AppContainerWithHooks';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
       <Provider store={store}>
     <AppContainerWithHooks />
       </Provider>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 );
 

@@ -1,9 +1,8 @@
-.main {
-    text-align: left;
-}
 
-.profile {
-    height: 100vh;
+.main {
+    min-height: 100%;
+    padding: 10px;
+    display: flex;
 }
 
 .lookingForAJob {
@@ -13,12 +12,10 @@
     vertical-align: middle;
 }
 
-.descriptionBlock {
-    padding: 10px;
-}
 
 .contact {
     padding-left: 10px;
+
 }
 
 .formSummaryError {
@@ -27,9 +24,9 @@
     color: indianred;
 }
 
-.avatar {
+.avatar img {
     width: 300px;
     height: 300px;
-    border-radius: 30px;
+    /*border-radius: 150px;*/
 
 }

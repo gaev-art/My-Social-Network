@@ -1,5 +1,5 @@
 import {getAuthUserDate} from './authReducer';
-import React from 'react';
+import {getNewMessages} from './dialogsReducer';
 
 export const SET_INITIALIZED = 'SOCIAL_NETWORK/APP/SET_INITIALIZED';
 
@@ -29,7 +29,10 @@ export const initializedSuccess = () => ({type: SET_INITIALIZED})
 //Thunk
 export const initializeApp = () => (dispatch) => {
     let promise = dispatch(getAuthUserDate());
+
     Promise.all([promise]).then(() => {
         dispatch(initializedSuccess());
+        dispatch(getNewMessages())
     })
+
 }

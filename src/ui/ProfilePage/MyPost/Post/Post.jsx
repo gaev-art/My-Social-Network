@@ -1,24 +1,26 @@
 import React from 'react';
-import s from './Post.module.css'
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
+import ListItemText from '@material-ui/core/ListItemText';
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
 
 const Post = (props) => {
-
-
-
     return (
-        <div className={s.item}>
-            <div className={s.Btn}>
-                <button onClick={()=>{props.deletePost(props.post.id)}}>x</button>
-            </div>
-            <div>
-                <img src={props.photo}/>
-                <span className={s.text}><b>{props.fullName} : </b>{props.post.message}</span>
-            </div>
-            <div className={s.mainLike}>
-                <span className={s.like}>like {props.post.likeCounts}</span>
-            </div>
-        </div>
-
+        <React.Fragment>
+            <ListItem button>
+                <ListItemAvatar>
+                    <Avatar alt="" src={props.photo}/>
+                </ListItemAvatar>
+                <ListItemText primary={props.fullName} secondary={props.post.message}/>
+                <IconButton edge="end" aria-label="delete" onClick={() => {
+                    props.deletePost(props.post.id)
+                }}>
+                    <DeleteIcon/>
+                </IconButton>
+            </ListItem>
+        </React.Fragment>
     )
 }
 

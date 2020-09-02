@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Friends.module.css'
 import FriendsItem from './FriendsItem/FriendsItem';
-import Preloader from '../common/Preloader/Preloader';
+import PreloaderInit from '../common/Preloaders/PreloaderForInit';
 
 
 export const Friends = (props) => {
@@ -16,7 +16,7 @@ export const Friends = (props) => {
     return (
         <div className={s.main}>
             <h3>Friends:</h3>
-            {props.loadingFriends ? <Preloader/> : <div className={s.friend}>
+            {props.loadingFriends ? <PreloaderInit/> : <div className={s.friend}>
                 {friendsElement}
             </div>}
         </div>

@@ -40,8 +40,6 @@ class DialogsContainer extends React.Component {
         return (
             <>
                 <Dialogs
-                    currentDialogsId={this.props.currentDialogsId}
-                    getMessages={getMessages}
                     deleteMessage={this.deleteMessage}
                     addNewMessage={this.addNewMessage}
                     {...this.props}/>
@@ -57,6 +55,9 @@ const mapStateToProps = (state) => ({
     loadingMessages: state.dialogsPage.loadingMessages,
     loadingDialogs: state.dialogsPage.loadingDialogs,
     currentDialogsMessagesCount: state.dialogsPage.currentDialogsMessagesCount,
+    login: state.auth.login,
+    profile: state.profilePage.profile,
+
 
 })
 export default compose(

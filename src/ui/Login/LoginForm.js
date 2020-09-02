@@ -34,7 +34,7 @@ const LoginForm = (props) => {
                 remember me
             </div>
             {props.captchaUrl && <div>
-                <img src={props.captchaUrl}/>
+                <img alt='' src={props.captchaUrl}/>
                 <Field
                     type="text"
                     placeholder='Symbols from image'

@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './App.module.css';
-import {Navbar} from './Navbar/NavBar';
-import {Redirect, Route, Switch} from 'react-router-dom';
+import {Redirect, Route, Switch, useParams} from 'react-router-dom';
 import HeaderContainer from './Header/HeaderContainer';
 import Login from './Login/Login';
 import ProfileContainer from './ProfilePage/ProfileContainer';
@@ -9,11 +8,14 @@ import UsersContainer from './UsersPage/UsersContainer';
 import FriendsContainer from './FriendsPage/FriendsContainer';
 import DialogsContainer from './DialogsPage/DialogsContainer';
 
+
 function App(props) {
+
+
     return (
         <div className={style.appWrapper}>
-            <HeaderContainer/>
-            <Navbar newMessagesCount={props.newMessagesCount}/>
+            <HeaderContainer />
+            {/*<Navbar newMessagesCount={props.newMessagesCount}/>*/}
             <div className={style.appWrapperContent}>
                 <Switch>
                     <Route exact path='/' render={() => <Redirect from="/" to="/profile"/>}/>
@@ -21,7 +23,8 @@ function App(props) {
                         <ProfileContainer userId={props.match.params.userId}/>}/>
                     <Route path='/users/:userId?' render={() => <UsersContainer/>}/>
                     <Route path='/friends' render={() => <FriendsContainer/>}/>
-                    <Route path='/dialogs' render={() => <DialogsContainer />}/>
+                    <Route path='/dialogs/:userId?' render={(props) =>
+                        <DialogsContainer userId={props.match.params.userId} />}/>
                     <Route path='/login' render={() => <Login/>}/>
                 </Switch>
             </div>

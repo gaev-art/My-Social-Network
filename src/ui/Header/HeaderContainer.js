@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {compose} from 'redux';
-import {Header} from './Header';
+import Header from './Header';
 import {logout} from '../../bll/authReducer';
 
 
@@ -18,6 +18,7 @@ const mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
         login: state.auth.login,
+        newMessagesCount: state.dialogsPage.newMessagesCount,
     }
 }
 

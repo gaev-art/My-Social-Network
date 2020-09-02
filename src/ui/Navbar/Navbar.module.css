@@ -1,7 +1,5 @@
 .nav {
     grid-area: n;
-    padding: 20px;
-    height: 100%;
 }
 
 .item {
@@ -16,10 +14,17 @@
 }
 
 .item a.activeLink {
-    color: gold;
+    color: #ff9900;
 }
 .newMessagesCount {
     padding: 2px;
     border: red solid 1px;
     background-color: #d08383;
+}
+
+
+@media (max-width: 960px) {
+    .nav{
+        display: none;
+    }
 }

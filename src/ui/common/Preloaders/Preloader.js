@@ -6,7 +6,7 @@ function Preloader(props) {
     return (
         <div className={s.main}>
             <h2>
-                <img src={preloader} className={s.preloader}/>
+                <img alt='' src={preloader} className={s.preloader}/>
                 Loading</h2>
 
         </div>

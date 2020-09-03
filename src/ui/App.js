@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './App.module.css';
-import {Redirect, Route, Switch, useParams} from 'react-router-dom';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import HeaderContainer from './Header/HeaderContainer';
 import Login from './Login/Login';
 import ProfileContainer from './ProfilePage/ProfileContainer';

@@ -1,6 +1,5 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import Button from '@material-ui/core/Button';
 import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -16,15 +15,14 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import PeopleIcon from '@material-ui/icons/People';
 import EmailIcon from '@material-ui/icons/Email';
 import Divider from '@material-ui/core/Divider';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
 import Typography from '@material-ui/core/Typography';
+import List from '@material-ui/core/List';
 
 
 const useStyles = makeStyles((theme) => ({
     grow: {
-        flexGrow: 1,
+        flexGrow: 2,
 
     },
     menuButton: {
@@ -32,21 +30,25 @@ const useStyles = makeStyles((theme) => ({
     },
     nav: {
         display: 'none',
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('sm')]: {
             display: 'block',
         },
     },
     sectionDesktop: {
         display: 'none',
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('sm')]: {
             display: 'flex',
             justifyContent: 'space-between',
         },
     },
+    root: {
+        flexGrow: 1,
+        maxWidth: 500,
+    },
     sectionMobile: {
         display: 'flex',
 
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('sm')]: {
             display: 'none',
         },
     },
@@ -129,61 +131,49 @@ export default function Header(props) {
                 </div>}
             </ListItem>
         </Menu>
-
     );
 
-
-    const [value, setValue] = React.useState(null);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
 
     return (
         <div className={classes.grow}>
             <AppBar color="inherit">
                 <Toolbar>
-                    <Typography variant="h6">
-                        My Social Network
-                    </Typography>
-                        <Tabs
-                            className={classes.nav}
-                            value={value}
-                            onChange={handleChange}
-                            variant="fullWidth"
-                            indicatorColor="secondary"
-                            textColor="secondary"
-                            aria-label="icon tabs example">
+                    <Typography variant={'h6'}>My Social Network</Typography>
+                    <div className={classes.grow}/>
+                    <List className={s.nav}>
+                        <ListItem button>
                             <div className={s.item}>
-                                <NavLink to='/profile' activeClassName={s.activeLink}>
-                                    <Tab icon={<AccountBoxIcon/>} label="Profile"/>
-                                </NavLink>
+                                <NavLink to='/profile' activeClassName={s.activeLink}>Profile</NavLink>
                             </div>
+                        </ListItem>
+                        <ListItem button>
                             <div className={s.item}>
-                                <NavLink to='/friends' activeClassName={s.activeLink}>
-                                    <Tab icon={<SentimentVerySatisfiedIcon/>} label="Friends"/>
-                                </NavLink>
+                                <NavLink to='/friends' activeClassName={s.activeLink}>Friends</NavLink>
                             </div>
+                        </ListItem>
+                        <ListItem button>
                             <div className={s.item}>
-                                <NavLink to='/dialogs' activeClassName={s.activeLink}>
-                                    <Tab
-                                        icon={props.newMessagesCount > 0
-                                            ? <Badge badgeContent={props.newMessagesCount} color="secondary">
-                                                <EmailIcon/>
-                                            </Badge> : <EmailIcon/>}
-                                        label="Dialogs"/>
-                                </NavLink>
+                                {props.newMessagesCount > 0
+                                    ? <Badge badgeContent={props.newMessagesCount} color="secondary">
+                                        <NavLink to='/dialogs' activeClassName={s.activeLink}>Dialogs</NavLink>
+                                    </Badge>
+                                    : <NavLink to='/dialogs' activeClassName={s.activeLink}>Dialogs</NavLink>}
                             </div>
+                        </ListItem>
+                        <ListItem button>
                             <div className={s.item}>
-                                <NavLink to='/users' activeClassName={s.activeLink}>
-                                    <Tab icon={<PeopleIcon/>} label="Users"/>
-                                </NavLink>
+                                <NavLink to='/users' activeClassName={s.activeLink}>Users</NavLink>
                             </div>
-                        </Tabs>
+                        </ListItem>
+                    </List>
                     <div className={classes.grow}/>
                     <div className={classes.sectionDesktop}>
                         {props.isAuth ?
-                            <Button onClick={props.logout} color="inherit">Logout</Button>
+                            <ListItem button onClick={props.logout} color="inherit">
+                                <div className={s.item}>
+                                    <NavLink to='/login' activeClassName={s.activeLink}>Logout</NavLink>
+                                </div>
+                            </ListItem>
                             : ''}
                     </div>
                     <div className={classes.sectionMobile}>
@@ -203,3 +193,4 @@ export default function Header(props) {
         </div>
     );
 }
+

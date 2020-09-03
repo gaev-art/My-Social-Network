@@ -5,14 +5,13 @@ import {compose} from 'redux';
 import {connect} from 'react-redux';
 import {WithAuthRedirect} from '../Hoc/WithAuthRedirect';
 import {
-    deleteMessage,
+    deleteMessage, getDialogs,
     getMessages,
     init,
     sendMessage,
     setLoadingMessagesSuccess,
     updateDialog
 } from '../../bll/dialogsReducer';
-
 
 
 class DialogsContainer extends React.Component {
@@ -62,6 +61,14 @@ const mapStateToProps = (state) => ({
 })
 export default compose(
     WithAuthRedirect,
-    connect(mapStateToProps, {init, updateDialog, getMessages, sendMessage, deleteMessage, setLoadingMessagesSuccess})
+    connect(mapStateToProps, {
+        init,
+        updateDialog,
+        getMessages,
+        sendMessage,
+        deleteMessage,
+        getDialogs,
+        setLoadingMessagesSuccess
+    })
 )(DialogsContainer);
 

@@ -73,7 +73,7 @@ export const setCurrentDialogsId = (currentDialogsId) => ({type: SET_CURRENT_DIA
 export const setMessageSuccess = (message) => ({type: SET_MESSAGE, message})
 export const setHasNewMessages = (userId, hasNewMessages) => ({type: SET_CHANGE_NEW_MESSAGES, userId, hasNewMessages})
 export const putUpDialog = (userId) => ({type: PUT_UP_DIALOGS, userId})
-export const setLoadingMessagesSuccess = (loadingMessages) => ({type: SET_LOADING_MESSAGES,loadingMessages})
+export const setLoadingMessagesSuccess = (loadingMessages) => ({type: SET_LOADING_MESSAGES, loadingMessages})
 export const setLoadingDialogsSuccess = () => ({type: SET_LOADING_DIALOGS,})
 export const deleteMessageSuccess = (messageId) => ({type: DELETE_MESSAGE, messageId})
 export const setNewMessagesCountSuccess = (newMessagesCount) => ({
@@ -87,17 +87,16 @@ export const init = (userId) => async (dispatch) => {
         dispatch(getMessages(userId))
         dispatch(setCurrentDialogsId(userId))
         await dispatch(startDialogs(userId))
-        dispatch(getDialogs())
     }
     dispatch(getDialogs())
-    // dispatch(setCurrentDialogsId(null))
+    dispatch(setCurrentDialogsId(null))
 }
 export const updateDialog = (userId) => async (dispatch) => {
     if (!!userId) {
         dispatch(getMessages(userId))
         dispatch(setCurrentDialogsId(userId))
     } else {
-        // dispatch(setCurrentDialogsId(null))
+        dispatch(setCurrentDialogsId(null))
     }
 
 }
@@ -120,10 +119,11 @@ export const getDialogs = () => async (dispatch) => {
 export const getMessages = (userId) => async (dispatch) => {
     dispatch(setLoadingMessagesSuccess(true))
     let response = await dialogsApi.getMessages(userId)
-    // dispatch(setCurrentDialogsId(userId))
-    dispatch(getMessagesSuccess(response))
-    dispatch(setHasNewMessages(userId, false))
+    await dispatch(getMessagesSuccess(response))
     dispatch(setLoadingMessagesSuccess(false))
+    dispatch(setCurrentDialogsId(userId))
+    dispatch(setHasNewMessages(userId, false))
+
 }
 
 export const startDialogs = (userId) => async (dispatch, getState) => {
@@ -131,15 +131,13 @@ export const startDialogs = (userId) => async (dispatch, getState) => {
     const dialogs = getState().dialogsPage.dialogs.find(d => d.id == userId)
     if (dialogs) {
         dispatch(putUpDialog(userId))
-    }else {
-        dispatch(getDialogs())
     }
 }
 
 export const sendMessage = (userId, body) => async (dispatch) => {
     let response = await dialogsApi.sendMessage(userId, body)
     dispatch(setMessageSuccess(response.data.message))
-    // dispatch(setCurrentDialogsId(userId))
+    dispatch(setCurrentDialogsId(userId))
     dispatch(startDialogs(userId))
     dispatch(reset('dialogAddMessageForm'))
 }
@@ -147,7 +145,5 @@ export const sendMessage = (userId, body) => async (dispatch) => {
 export const deleteMessage = (messageId) => async (dispatch) => {
     await dialogsApi.deleteMessage(messageId)
     dispatch(deleteMessageSuccess(messageId))
-
 }
-
 

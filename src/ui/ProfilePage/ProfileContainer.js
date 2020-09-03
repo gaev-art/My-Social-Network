@@ -3,7 +3,6 @@ import {Profile} from './Profile';
 import {compose} from 'redux';
 import {connect} from 'react-redux';
 import {
-    getPostsProfile,
     getUsersProfile,
     savePhoto,
     saveProfile,
@@ -17,7 +16,7 @@ import {WithAuthRedirect} from '../Hoc/WithAuthRedirect';
 
 class ProfileContainer extends React.Component {
 
-   refreshProfile = () => {
+    refreshProfile = () => {
         let userId = this.props.match.params.userId;
         if (!userId) {
             userId = this.props.authorizedUserId
@@ -27,7 +26,6 @@ class ProfileContainer extends React.Component {
         }
         this.props.getUsersProfile(userId)
         this.props.setStatus(userId)
-        this.props.getPostsProfile()
     }
 
 
@@ -63,7 +61,7 @@ const mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {getUsersProfile, getPostsProfile, setEditMode, setStatus, updateStatus, savePhoto, saveProfile}),
+    connect(mapStateToProps, {getUsersProfile, setEditMode, setStatus, updateStatus, savePhoto, saveProfile}),
     withRouter,
     WithAuthRedirect
 )(ProfileContainer)

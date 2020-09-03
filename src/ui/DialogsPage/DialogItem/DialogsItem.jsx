@@ -32,13 +32,13 @@ const DialogItem = (props) => {
         <div className={`${classes.root}`}>
             <List>
                 <NavLink to={path} activeClassName={s.activeLink}>
-                    <ListItem button  onClick={onClickHandler}>
+                    <ListItem button onClick={onClickHandler}>
                         <ListItemIcon>
                             <img
                                 alt=''
                                 src={props.dialogs.photos.small != null ? props.dialogs.photos.small : ava}
                                 className={s.img}
-                               />
+                            />
                         </ListItemIcon>
                         <div>                                            {/* добавить стиль !!!*/}
                             {props.dialogs.userName}
@@ -49,17 +49,7 @@ const DialogItem = (props) => {
                 </NavLink>
             </List>
         </div>
-        // <div>
-        //     <NavLink to={path} activeClassName={s.activeLink}>
-        //         <img
-        //             src={props.dialogs.photos.small != null ? props.dialogs.photos.small : ava}
-        //             className={s.img}
-        //             onClick={onClickHandler}/>
-        //         {props.dialogs.userName}
-        //         {props.dialogs.hasNewMessages > 0 &&
-        //         <img src={newMessage} className={s.icon}/>}
-        //     </NavLink>
-        // </div>
+
 
     )
 }

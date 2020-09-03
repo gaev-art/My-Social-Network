@@ -7,6 +7,8 @@ import {startDialogs} from '../../bll/dialogsReducer';
 
 
 const FriendsContainer = props => {
+
+
     const friends = useSelector(state => state.friendsPage.friends)
     const loadingFriends = useSelector(state => state.friendsPage.loadingFriends)
 

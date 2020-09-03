@@ -16,7 +16,7 @@ function PreloaderInit(props) {
 
     return (
         <Backdrop className={classes.backdrop} open={true}>
-            <CircularProgress color="inherit" />
+            <CircularProgress color="inherit"/>
         </Backdrop>
     )
 }

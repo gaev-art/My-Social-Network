@@ -1,11 +1,13 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
-    /*height: 100vh;*/
 }
 
 .dialogsItems {
-    /*padding: 10px;*/
+}
+
+
+.dialogsMenu {
+    display: none;
 }
 
 .dialogsItems a {
@@ -13,25 +15,19 @@
     color: #000000;
     text-decoration: none;
     display: flex;
-        vertical-align: middle;
+    vertical-align: middle;
 
 
 }
 
 .dialogsItems a.activeLink {
-    /*border: black solid 1px;*/
     color: gold;
-
-
 }
 
 
 .messages {
     padding: 5px;
     margin: 5px;
-    text-align: center;
-    /*display: flex;*/
-
 
 }
 
@@ -40,6 +36,7 @@
     justify-content: flex-end;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
 
 }

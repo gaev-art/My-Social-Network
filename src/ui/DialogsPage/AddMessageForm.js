@@ -11,7 +11,8 @@ function AddMessageForm(props) {
                 name={'newMessageBody'}
                 placeholder='Enter your message'
                 component={Textarea}
-                validate={[required]}/>
+                validate={[required]}
+            />
         </div>
         <div>
             <button>Send</button>

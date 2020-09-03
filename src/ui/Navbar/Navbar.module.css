@@ -1,10 +1,12 @@
 .nav {
     grid-area: n;
+    display: flex;
+
 }
 
 .item {
-    display: flex;
-    vertical-align: center;
+    /*display: flex;*/
+    /*vertical-align: center;*/
 }
 
 .item a {
@@ -16,6 +18,7 @@
 .item a.activeLink {
     color: #ff9900;
 }
+
 .newMessagesCount {
     padding: 2px;
     border: red solid 1px;
@@ -23,8 +26,8 @@
 }
 
 
-@media (max-width: 960px) {
-    .nav{
+@media (max-width: 600px) {
+    .nav {
         display: none;
     }
 }

@@ -25,6 +25,7 @@ function Paginator(props) {
         props.firstPortion(1)
     }
 
+
     return (
         <div>
             {props.portionNumber > 1 &&
@@ -39,7 +40,7 @@ function Paginator(props) {
                 .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
                 .map((p) => {
                     return <button
-                        className={props.currentPage === p && styles.selectedPage}
+                        className={props.currentPage == p && styles.selectedPage}
                         key={p}
                         onClick={(e) => {
                             props.onPageChanged(p);

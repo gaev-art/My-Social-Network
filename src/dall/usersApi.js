@@ -4,7 +4,7 @@ import {instance} from './instance';
 export const usersApi = {
     getUsers(currentPage, pageSize, searchName) {
         return instance.get(`users?`
-            + (searchName  ? `term=${searchName}&` : '')
+            + (searchName ? `term=${searchName}&` : '')
             + (pageSize ? `count=${pageSize}&` : '')
             + (currentPage ? `page=${currentPage}` : '')
         )

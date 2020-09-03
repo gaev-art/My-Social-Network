@@ -16,8 +16,6 @@ const useStyles = makeStyles((theme) => ({
         // backgroundColor: "rgba(0, 0, 0, 0.04);",
         '& > *': {
             margin: theme.spacing(1),
-            // width: theme.spacing(50),
-            // height: theme.spacing(50),
             // backgroundColor: "rgba(0, 0, 0, 0.04);",
         }
     }
@@ -63,7 +61,8 @@ export const Profile = (props) => {
                         goToEditMode={() => {
                             props.setEditMode(true)
                         }}/>}</div>
-            <MyPostContainer profile={props.profile}/>
+            {props.isOwner &&
+            <MyPostContainer profile={props.profile}/>}
         </div>
 
     )

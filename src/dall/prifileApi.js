@@ -26,15 +26,15 @@ export const profileApi = {
         return instance.put(`profile`,
             profile)
     },
-    setPosts() {
-        return instance.get(`http://localhost:3004/posts`)
-    },
-    deletePost(postId) {
-        return instance.delete(`http://localhost:3004/posts/${postId}`)
-            .then(res => res.data)
-    },
-    sendPost(post) {
-        return instance.post(`http://localhost:3004/posts/`, post)
-
-    },
+    // setPosts() {
+    //     return instance.get(`http://localhost:3004/posts`)
+    // },
+    // deletePost(postId) {
+    //     return instance.delete(`http://localhost:3004/posts/${postId}`)
+    //         .then(res => res.data)
+    // },
+    // sendPost(post) {
+    //     return instance.post(`http://localhost:3004/posts/`, post)
+    //
+    // },
 }

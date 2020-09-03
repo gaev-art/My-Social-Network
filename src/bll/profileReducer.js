@@ -3,10 +3,11 @@ import {reset, stopSubmit} from 'redux-form';
 
 const SET_USER_PROFILE = 'SOCIAL_NETWORK/PROFILE/SET_USER_PROFILE';
 const SET_STATUS = 'SOCIAL_NETWORK/PROFILE/SET_STATUS';
-const SET_POSTS = 'SOCIAL_NETWORK/PROFILE/SET_POSTS';
 const SAVE_PHOTO = 'SOCIAL_NETWORK/PROFILE/SAVE_PHOTO';
 const EDIT_MODE = 'SOCIAL_NETWORK/PROFILE/EDIT_MODE';
 const ADD_POST = 'SOCIAL_NETWORK/PROFILE/ADD-POST';
+const DELETE_POST = 'SOCIAL_NETWORK/PROFILE/DELETE_POST';
+
 
 const initialState = {
     profile: null,
@@ -19,7 +20,6 @@ export const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USER_PROFILE:
         case SET_STATUS:
-        case SET_POSTS:
             return {...state, ...action.payload}
         case SAVE_PHOTO:
             return {
@@ -39,6 +39,11 @@ export const profileReducer = (state = initialState, action) => {
                 ...state,
                 posts: [...state.posts, {...action.post}],
             }
+        case DELETE_POST:
+            return {
+                ...state,
+                posts: state.posts.filter(p => p.id !== action.postId)
+            }
         default:
             return state
     }
@@ -48,34 +53,25 @@ export const profileReducer = (state = initialState, action) => {
 //AC
 export const setUserProfileSuccess = (profile) => ({type: SET_USER_PROFILE, payload: {profile}})
 export const setStatusSuccess = (status) => ({type: SET_STATUS, payload: {status}})
-export const setPostsSuccess = (posts) => ({type: SET_STATUS, payload: {posts}})
 export const savePhotoSuccess = (file) => ({type: SAVE_PHOTO, file})
 export const setEditMode = (editMode) => ({type: EDIT_MODE, editMode})
 export const addPostSuccess = (post) => ({type: ADD_POST, post})
+export const deletePost = (postId) => ({type: DELETE_POST, postId})
 
 //Thunks
-
 export const getUsersProfile = (userId) => async (dispatch) => {
     let response = await profileApi.setUserProfile(userId)
     dispatch(setUserProfileSuccess(response.data))
 }
-export const getPostsProfile = () => async (dispatch) => {
-    let response = await profileApi.setPosts()
-    dispatch(setPostsSuccess(response.data))
-}
-export const deletePostsProfile = (postId) => async (dispatch) => {
-    await profileApi.deletePost(postId)
-    dispatch(getPostsProfile())
-}
+
 export const addPost = (newPostText) => async (dispatch) => {
     let post = {
+        id: Math.floor(Math.random() * 100),
         message: newPostText,
         likeCounts: '0',
     }
-    await profileApi.sendPost(post)
     dispatch(addPostSuccess(post))
     dispatch(reset('profileAddNewPostForm'))
-    dispatch(getPostsProfile())
 
 }
 

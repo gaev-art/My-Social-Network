@@ -19,13 +19,14 @@
 
 
 }
-.mainBtn{
+
+.mainBtn {
     display: flex;
     justify-content: flex-end;
 }
 
-.deleteBtn{
-background-color: #e78484;
+.deleteBtn {
+    background-color: #e78484;
 }
 
 
@@ -34,6 +35,7 @@ background-color: #e78484;
     /*width: 30px;*/
 
 }
+
 .mainTime {
     display: flex;
     justify-content: flex-end;

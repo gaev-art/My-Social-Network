@@ -8,12 +8,12 @@ import {store} from './bll/store';
 import AppContainerWithHooks from './ui/AppContainerWithHooks';
 
 ReactDOM.render(
-  <HashRouter>
-      <Provider store={store}>
-    <AppContainerWithHooks />
-      </Provider>
-  </HashRouter>,
-  document.getElementById('root')
+    <HashRouter>
+        <Provider store={store}>
+            <AppContainerWithHooks/>
+        </Provider>
+    </HashRouter>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

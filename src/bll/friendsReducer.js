@@ -7,10 +7,9 @@ export const SET_FRIENDS = 'SOCIAL_NETWORK/USERS/SET_FRIENDS';
 export const LOADING_FRIENDS = 'SOCIAL_NETWORK/USERS/LOADING_FRIENDS';
 
 
-
 let initialState = {
-    friends:[],
-    loadingFriends:false,
+    friends: [],
+    loadingFriends: false,
 }
 
 
@@ -22,7 +21,8 @@ export const friendsReducer = (state = initialState, action) => {
                 friends: state.friends.map(u => {
                     if (action.friendId === u.id) {
                         return {...u, followed: false}
-                    }return u;
+                    }
+                    return u;
                 })
             }
         case SET_FRIENDS:
@@ -45,9 +45,6 @@ export const friendsReducer = (state = initialState, action) => {
 export const removeSuccess = (friendId) => ({type: REMOVE_FRIENDS, friendId});
 export const setFriendsSuccess = (friends) => ({type: SET_FRIENDS, friends});
 export const loadingFriends = () => ({type: LOADING_FRIENDS});
-
-
-
 
 
 //Thunk

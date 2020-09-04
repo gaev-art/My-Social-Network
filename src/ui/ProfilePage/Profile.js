@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: 'grid',
         gridTemplateColumns: '1fr',
-        gridTemplateRows: ' 1fr 1fr 1fr',
+        // gridTemplateRows: ' 1fr 1fr 1fr',
         // backgroundColor: "rgba(0, 0, 0, 0.04);",
         '& > *': {
             margin: theme.spacing(1),

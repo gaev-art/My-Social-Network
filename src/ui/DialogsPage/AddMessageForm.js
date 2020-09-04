@@ -2,6 +2,7 @@ import {required} from '../../utils/validators/validators';
 import {Field, reduxForm} from 'redux-form';
 import {Textarea} from '../common/FormsConrols/FormControls';
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 
 function AddMessageForm(props) {
@@ -15,7 +16,8 @@ function AddMessageForm(props) {
             />
         </div>
         <div>
-            <button>Send</button>
+            <Button type="submit">Send</Button>
+
         </div>
     </form>;
 }

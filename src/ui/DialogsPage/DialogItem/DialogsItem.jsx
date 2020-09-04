@@ -2,11 +2,11 @@ import React from 'react';
 import s from './../Dialogs.module.css';
 import {NavLink} from 'react-router-dom';
 import ava from '../../../img/ava.png';
-import newMessage from '../../../img/newMessage.png';
 import {makeStyles} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
+import Badge from '@material-ui/core/Badge';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -40,10 +40,12 @@ const DialogItem = (props) => {
                                 className={s.img}
                             />
                         </ListItemIcon>
-                        <div>                                            {/* добавить стиль !!!*/}
-                            {props.dialogs.userName}
-                            {props.dialogs.hasNewMessages > 0 &&
-                            <img alt='' src={newMessage} className={s.icon}/>}
+                        <div>
+                            {props.dialogs.hasNewMessages > 0
+                                ?
+                                <Badge color="secondary" variant="dot">{props.dialogs.userName}</Badge>
+                                : <>{props.dialogs.userName}</>
+                            }
                         </div>
                     </ListItem>
                 </NavLink>

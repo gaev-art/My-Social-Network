@@ -3,6 +3,7 @@ import yes from '../../../img/yes.png'
 import no from '../../../img/no.png'
 import {Contact} from './Contact';
 import s from '../Profile.module.css';
+import Button from '@material-ui/core/Button';
 
 export const ProfileData = (props) => {
     return <div>
@@ -33,7 +34,7 @@ export const ProfileData = (props) => {
         </div>
         {props.isOwner &&
         <div>
-            <button onClick={props.goToEditMode}>edit</button>
+            <Button onClick={props.goToEditMode}>edit</Button>
         </div>}
     </div>
 }

@@ -17,7 +17,7 @@ const Message = (props) => {
 
     return (
         <React.Fragment>
-            <ListItem style={{width: '100%'}} button>
+            <ListItem style={{width: '100%'}}  button>
                 {/*<ListItemAvatar>*/}
                 {/*    <Avatar alt="Profile Picture" src={props.avatar} />*/}
                 {/*</ListItemAvatar>*/}

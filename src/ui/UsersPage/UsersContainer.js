@@ -12,7 +12,6 @@ import {
     unFollowSuccess
 } from '../../bll/usersReducer';
 
-
 class UsersContainer extends React.Component {
 
     componentDidMount() {
@@ -46,8 +45,6 @@ class UsersContainer extends React.Component {
                      prevPortion={this.prevPortion}
                      firstPortion={this.firstPortion}
                      onPageChanged={this.onPageChanged}/>
-
-
     }
 }
 
@@ -61,8 +58,6 @@ const mapStateToProps = (state) => {
         followingInProgress: state.usersPage.followingInProgress,
         portionSize: state.usersPage.portionSize,
         portionNumber: state.usersPage.portionNumber,
-
-
     }
 }
 

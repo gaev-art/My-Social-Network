@@ -1,38 +1,21 @@
-import React from 'react';
-import {Field, reduxForm} from 'redux-form';
-import {maxLengthCreator, required} from '../../utils/validators/validators';
-import {Input} from '../common/FormsConrols/FormControls';
-import style from '../common/FormsConrols/FormControls.module.css'
-
-let maxLength20 = maxLengthCreator(20)
+import React from 'react'
+import {Field, reduxForm} from 'redux-form'
+import Button from '@material-ui/core/Button';
+import {required, validate} from '../../utils/validators/validators';
+import {Input, renderTextField} from '../common/FormsConrols/FormControls';
 
 
-const LoginForm = (props) => {
+const LoginReduxForm = props => {
+    const { handleSubmit } = props
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div>
-                <Field
-                    type="text"
-                    placeholder='login'
-                    component={Input}
-                    name={'login'}
-                    validate={[required, maxLength20]}/>
+                <Field name="login" component={renderTextField} label="Login"/>
             </div>
             <div>
-                <Field
-                    type="password"
-                    placeholder='password'
-                    component={Input}
-                    name={'password'}
-                    validate={[required, maxLength20]}/>
+                <Field type='password' name="password" component={renderTextField} label="Password" />
             </div>
-            <div>
-                <Field
-                    type="checkbox"
-                    component={Input}
-                    name={'rememberMe'}/>
-                remember me
-            </div>
+            <div />
             {props.captchaUrl && <div>
                 <img alt='' src={props.captchaUrl}/>
                 <Field
@@ -43,17 +26,14 @@ const LoginForm = (props) => {
                     validate={required}/>
             </div>
             }
-
-            {props.error && <div className={style.formSummaryError}>
-                {props.error}
-            </div>}
-            <div>
-                <button>Login</button>
+            <div style={{margin:'10px'}}>
+                <Button type="submit">Login</Button>
             </div>
         </form>
     )
 }
 
-const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
-
-export default LoginReduxForm;
+export default reduxForm({
+    form: 'login',
+    validate,
+})(LoginReduxForm)

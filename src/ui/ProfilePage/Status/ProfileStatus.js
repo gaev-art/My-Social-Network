@@ -1,4 +1,7 @@
 import React from 'react';
+import {Field, reduxForm} from 'redux-form';
+import {renderTextField} from '../../common/FormsConrols/FormControls';
+import {validate} from '../../../utils/validators/validators';
 
 
 class ProfileStatus extends React.Component {
@@ -42,7 +45,7 @@ class ProfileStatus extends React.Component {
         return (
             <>
                 {!this.state.editMode
-                    ? <div>
+                    ? <div style={{margin:'10px'}}>
                         <span
                             onDoubleClick={this.activateEditMode}>
                             <b>Status : </b> {this.props.status || 'No status'}
@@ -50,12 +53,23 @@ class ProfileStatus extends React.Component {
                     </div>
                     : <div>
                         Status:
-                        <input
-                            onKeyPress={this.onKeYPress}
-                            onBlur={this.deactivateEditMode}
-                            autoFocus={true}
-                            value={this.state.status}
-                            onChange={this.onStatusChange}/>
+                        <div style={{margin:'10px'}}>
+                            <Field
+                                name="status"
+                                component={renderTextField}
+                                label="Status"
+                                onKeyPress={this.onKeYPress}
+                                onBlur={this.deactivateEditMode}
+                                autoFocus={true}
+                                value={this.state.status}
+                                onChange={this.onStatusChange}/>
+                        </div>
+                        {/*<input*/}
+                        {/*    onKeyPress={this.onKeYPress}*/}
+                        {/*    onBlur={this.deactivateEditMode}*/}
+                        {/*    autoFocus={true}*/}
+                        {/*    value={this.state.status}*/}
+                        {/*    onChange={this.onStatusChange}/>*/}
                     </div>
                 }
             </>
@@ -63,4 +77,8 @@ class ProfileStatus extends React.Component {
     }
 }
 
-export default ProfileStatus;
+
+export default reduxForm({
+    form: 'profileStatus',
+    validate,
+})(ProfileStatus)

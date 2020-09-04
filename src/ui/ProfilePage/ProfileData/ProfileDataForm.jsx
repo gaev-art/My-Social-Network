@@ -1,7 +1,8 @@
 import React from 'react';
 import s from '../Profile.module.css';
-import {Input, Textarea} from '../../common/FormsConrols/FormControls';
+import {renderCheckbox, renderTextField, Textarea} from '../../common/FormsConrols/FormControls';
 import {Field, reduxForm} from 'redux-form';
+import Button from '@material-ui/core/Button';
 
 const ProfileDataForm = (props) => {
 
@@ -15,30 +16,23 @@ const ProfileDataForm = (props) => {
 
     return <form onSubmit={props.handleSubmit}>
         <input type={'file'} onChange={onMainPhotoSelected}/>
-        <div><b>NickName</b>:
-            <Field
-                type="text"
-                placeholder='Full name'
-                component={Input}
-                name={'fullName'}
-            />
+        <div style={{margin: '10px'}}>
+            <Field name="fullName" component={renderTextField} label="Full name"/>
         </div>
-        <div><b>About Me</b>:
+        <div style={{margin: '10px'}}>
+            <b>About Me</b>:
             <Field
+
                 type="text"
                 placeholder='About Me'
                 component={Textarea}
                 name={'aboutMe'}
             />
         </div>
-        <div><b>lookingForAJob</b>:
-            <Field
-                type="checkbox"
-                component={Input}
-                name={'lookingForAJob'}
-            />
+        <div style={{margin: '10px'}}>
+            <Field type="checkbox" name="lookingForAJob" component={renderCheckbox} label="Looking for a job"/>
         </div>
-        <div>
+        <div style={{margin: '10px'}}>
             <b>My professional skills</b> :
             <Field
                 type="text"
@@ -47,14 +41,11 @@ const ProfileDataForm = (props) => {
                 name={'lookingForAJobDescription'}
             />
         </div>
-
-        <div><b>Contacts</b>:{Object.keys(props.profile.contacts).map(key => {
+        <div>
+            <b>Contacts</b>:{Object.keys(props.profile.contacts).map(key => {
             return <div key={key} className={s.contact}>
-                <b>{key}</b> :<Field
-                type="text"
-                placeholder={key}
-                component={Input}
-                name={'contacts.' + key}/>
+                <Field style={{width: '500px'}} type="text" name={'contacts.' + key} component={renderTextField}
+                       label={key}/>
             </div>
         })}
         </div>
@@ -62,8 +53,8 @@ const ProfileDataForm = (props) => {
             {props.error}
         </div>}
         <div>
-            <button>save</button>
-            <button onClick={props.cancelEditMode}>cancel</button>
+            <Button type="submit">save</Button>
+            <Button onClick={props.cancelEditMode}>cancel</Button>
         </div>
     </form>
 }

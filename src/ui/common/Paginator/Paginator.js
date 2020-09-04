@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Paginator.module.css';
+import Button from '@material-ui/core/Button';
 
 function Paginator(props) {
 
@@ -30,24 +30,21 @@ function Paginator(props) {
         <div>
             {props.portionNumber > 1 &&
             <>
-                <button onClick={setFirstPage}> first
-                </button>
-                <button onClick={decrementPage}>Prev
-                </button>
+                <Button onClick={setFirstPage}>first</Button>
+                <Button onClick={decrementPage}>Prev</Button>
             </>}
 
             {pages
                 .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
                 .map((p) => {
-                    return <button
-                        className={props.currentPage == p && styles.selectedPage}
+                    return <Button
                         key={p}
                         onClick={(e) => {
                             props.onPageChanged(p);
-                        }}>{p}</button>
+                        }}>{p}</Button>
                 })}
             {portionCount > props.portionNumber &&
-            <button onClick={incrementPage}>Next</button>}
+            <Button onClick={incrementPage}>Next</Button>}
         </div>
     )
 }

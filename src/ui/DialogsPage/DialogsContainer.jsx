@@ -5,7 +5,8 @@ import {compose} from 'redux';
 import {connect} from 'react-redux';
 import {WithAuthRedirect} from '../Hoc/WithAuthRedirect';
 import {
-    deleteMessage, getDialogs,
+    deleteMessage,
+    getDialogs,
     getMessages,
     init,
     sendMessage,
@@ -21,7 +22,7 @@ class DialogsContainer extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.userId != this.props.userId) {
+        if (prevProps.userId !== this.props.userId) {
             this.props.updateDialog(this.props.userId)
         }
     }

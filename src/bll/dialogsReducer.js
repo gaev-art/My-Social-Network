@@ -39,7 +39,7 @@ export const dialogsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 dialogs: state.dialogs.map(d => {
-                    if (d.id == action.userId) {
+                    if (d.id === Number(action.userId)) {
                         return {...d, hasNewMessages: action.hasNewMessages}
                     } else return d
                 })
@@ -47,8 +47,8 @@ export const dialogsReducer = (state = initialState, action) => {
         case PUT_UP_DIALOGS:
             return {
                 ...state, dialogs: [
-                    state.dialogs.find(d => d.id == action.userId),
-                    ...state.dialogs.filter(d => d.id != action.userId)]
+                    state.dialogs.find(d => d.id === Number(action.userId)),
+                    ...state.dialogs.filter(d => d.id !== Number(action.userId))]
             }
         case SET_LOADING_MESSAGES:
             return {...state, loadingMessages: action.loadingMessages}
@@ -128,7 +128,7 @@ export const getMessages = (userId) => async (dispatch) => {
 
 export const startDialogs = (userId) => async (dispatch, getState) => {
     await dialogsApi.startDialogs(userId)
-    const dialogs = getState().dialogsPage.dialogs.find(d => d.id == userId)
+    const dialogs = getState().dialogsPage.dialogs.find(d => d.id === Number(userId))
     if (dialogs) {
         dispatch(putUpDialog(userId))
     }

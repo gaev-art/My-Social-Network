@@ -4,6 +4,7 @@ import Post from './Post/Post';
 import {Field, reduxForm} from 'redux-form';
 import {maxLengthCreator, required} from '../../../utils/validators/validators';
 import {Textarea} from '../../common/FormsConrols/FormControls';
+import Button from '@material-ui/core/Button';
 
 let maxLength10 = maxLengthCreator(100)
 
@@ -17,7 +18,7 @@ function AddNewPost(props) {
                 placeholder='Enter your post'/>
         </div>
         <div>
-            <button>Add post</button>
+            <Button type="submit">Add post</Button>
         </div>
     </form>;
 }

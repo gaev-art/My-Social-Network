@@ -1,7 +1,7 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
-import {Input} from '../FormsConrols/FormControls';
-import {required} from '../../../utils/validators/validators';
+import {renderTextField} from '../FormsConrols/FormControls';
+import Button from '@material-ui/core/Button';
 
 
 export const SearchForm = (props) => {
@@ -10,18 +10,13 @@ export const SearchForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field
-                    type="text"
-                    placeholder='Enter name'
-                    component={Input}
-                    name={'search'}
-                    validate={[required]}/>
+                <Field type="text" name="search" component={renderTextField} label="Enter name"/>
             </div>
             <div style={{fontSize: '10px'}}>
                 Сервер принимает только латинские буквы и цифры
             </div>
             <div>
-                <button>Search</button>
+                <Button type="submit">Search</Button>
             </div>
         </form>
     )

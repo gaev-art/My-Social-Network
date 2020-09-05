@@ -16,7 +16,7 @@
 }
 
 .item a.activeLink {
-    color: #2b2b2b;
+    color: #dc004e;
 }
 
 .newMessagesCount {
@@ -26,8 +26,3 @@
 }
 
 
-@media (max-width: 600px) {
-    .nav {
-        display: none;
-    }
-}

@@ -2,7 +2,13 @@
 .main {
     height: 100vh;
     text-align: center;
+}
 
+.root {
+    flex-grow: 1;
+    max-width: 752px;
+    height: 100px;
+    margin: 10px;
 }
 
 .img {
@@ -39,8 +45,5 @@
 }
 
 .friend a.activeLink {
-    /*border: black solid 1px;*/
-    color: rgb(220, 0, 78);
-
-
+    color: #dc004e;
 }

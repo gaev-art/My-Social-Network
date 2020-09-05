@@ -1,28 +1,25 @@
-.header {
-    grid-area: h;
-    /*background-color: rgba(188, 232, 137, 0.97);*/
-    justify-content: flex-end;
-    /*border: black solid;*/
-
+.nav {
+    grid-area: n;
+    display: flex;
 
 }
 
-.main {
-
+.item {
 
 }
 
-
-.img {
-    width: 50px;
-    color: white;
+.item a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
 }
 
-
-.loginBlock {
-    float: right;
+.item a.activeLink {
+    color: #dc004e;
 }
 
-.loginBlock a {
-    color: #5a5151;
+@media (max-width: 600px) {
+    .nav {
+        display: none;
+    }
 }

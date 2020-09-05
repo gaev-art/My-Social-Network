@@ -1,59 +1,57 @@
 import React from 'react';
-import style from '../Users.module.css'
+import style from './User.module.css'
 import ava from '../../../img/ava.png'
-import {useHistory} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemText from '@material-ui/core/ListItemText';
-import {makeStyles} from '@material-ui/core/styles';
 import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
+import List from '@material-ui/core/List';
+import IconButton from '@material-ui/core/IconButton';
+import s from '../../Header/Header.module.css';
 
-
-const useStyles = makeStyles(() => ({
-    root: {
-        flexGrow: 1,
-        maxWidth: 752,
-        height: 100,
-        margin: 10,
-    }
-}));
 
 const User = (props) => {
 
-    let history = useHistory();
+    const path = '/profile/' + props.user.id;
 
-    const classes = useStyles();
     return (
-
-        <React.Fragment>
-            <ListItem className={classes.root} onClick={() => {
-                history.push(`/profile/${props.user.id}`)
-            }} button>
-                <ListItemAvatar>
-                    <img alt=""
-                         src={props.user.photos.small != null ? props.user.photos.small : ava} className={style.img}/>
-                </ListItemAvatar>
-                <ListItemText style={{padding: '10px'}} primary={props.user.name}/>
+        <List className={style.main}>
+            <div className={s.item}>
+            <NavLink to={path} activeClassName={style.activeLink}>
+                <ListItem button>
+                        <img
+                            alt=''
+                            src={props.user.photos.small != null
+                                ? props.user.photos.small : ava}
+                            className={style.img}/>
+                    <div style={{width: '600px'}}>
+                        {props.user.name}
+                    </div>
+                </ListItem>
+            </NavLink>
+            </div>
+            <div className={style.button}>
                 {props.user.followed
-                    ? <RemoveIcon
+                    ? <IconButton
+                        aria-label="unFollow"
                         disabled={props.followingInProgress
                             .some(id => id === props.user.id)}
                         onClick={() => {
                             props.unFollow(props.user.id)
                         }}>
-                        UnFollow
-                    </RemoveIcon>
-                    : <AddIcon
+                        <RemoveIcon>UnFollow</RemoveIcon>
+                    </IconButton>
+                    : <IconButton
+                        aria-label="follow"
                         disabled={props.followingInProgress
                             .some(id => id === props.user.id)}
                         onClick={() => {
                             props.follow(props.user.id)
                         }}>
-                        Follow
-                    </AddIcon>}
-            </ListItem>
-        </React.Fragment>
+                        <AddIcon>Follow</AddIcon>
+                    </IconButton>}
+            </div>
+        </List>
     )
 }
 

@@ -5,6 +5,11 @@
     display: flex;
 }
 
+.root {
+display: grid;
+gridTemplateColumns: '1fr';
+}
+
 .lookingForAJob {
     width: 40px;
     height: 40px;

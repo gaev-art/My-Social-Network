@@ -1,0 +1,35 @@
+.main {
+    display:flex;
+
+}
+
+
+
+
+.img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+
+
+.item {
+
+}
+
+.item a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.item a.activeLink {
+    color: #dc004e;
+}
+
+.button{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}

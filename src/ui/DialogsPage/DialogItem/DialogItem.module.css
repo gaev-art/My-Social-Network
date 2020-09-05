@@ -1,0 +1,22 @@
+
+
+.dialogsItems a {
+    /*padding: 10px;*/
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    vertical-align: middle;
+
+
+}
+
+.dialogsItems a.activeLink {
+    color:#dc004e;
+}
+
+
+.img {
+    width: 80px;
+
+    border-radius: 30px;
+}

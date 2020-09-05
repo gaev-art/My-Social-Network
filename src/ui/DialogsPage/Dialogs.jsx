@@ -58,8 +58,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dialogs(props) {
+
     const classes = useStyles();
+
     const theme = useTheme();
+
     const [open, setOpen] = React.useState(false);
 
     const dialogsElement = props.dialogs.map(d => <DialogItem
@@ -88,7 +91,7 @@ export default function Dialogs(props) {
         <div className={s.dialogs}>
 
             <Drawer
-                className={`${classes.drawer} ${s.dialogsItems}`}
+                className={`${classes.drawer}`}
                 variant="persistent"
                 anchor="left"
                 open={open}

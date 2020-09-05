@@ -33,17 +33,17 @@ const Message = (props) => {
             </ListItem>
         </React.Fragment>
 
-        // <div id='main' className={s.main}>
-        //     <div className={s.message}>
-        //         <div className={s.mainBtn}>
+        // <div id='main' className={style.main}>
+        //     <div className={style.message}>
+        //         <div className={style.mainBtn}>
         //             <button
-        //                 className={s.deleteBtn}
+        //                 className={style.deleteBtn}
         //                 onClick={onClickHandler}>x
         //             </button>
         //         </div>
-        //         <b className={s.name}>{props.message.senderName}:</b>{props.message.body}
-        //         <div className={s.mainTime}>
-        //             <p className={s.time}>{data}</p>
+        //         <b className={style.name}>{props.message.senderName}:</b>{props.message.body}
+        //         <div className={style.mainTime}>
+        //             <p className={style.time}>{data}</p>
         //         </div>
         //
         //     </div>

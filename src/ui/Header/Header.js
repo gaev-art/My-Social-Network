@@ -9,7 +9,7 @@ import Menu from '@material-ui/core/Menu';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import s from '../Navbar/Navbar.module.css';
+import s from './Header.module.css';
 import ListItem from '@material-ui/core/ListItem';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import PeopleIcon from '@material-ui/icons/People';
@@ -141,39 +141,43 @@ export default function Header(props) {
                     <Typography variant={'h6'}>My Social Network</Typography>
                     <div className={classes.grow}/>
                     <List className={s.nav}>
+                        <div className={s.item}>
+                        <NavLink to='/profile' activeClassName={s.activeLink}>
+                        <ListItem button>Profile</ListItem>
+                        </NavLink>
+                        </div>
+                        <div className={s.item}>
+                        <NavLink to='/friends' activeClassName={s.activeLink}>
+                        <ListItem button>Friends</ListItem>
+                        </NavLink>
+                        </div>
+                        <div className={s.item}>
+                        <NavLink to='/dialogs' activeClassName={s.activeLink}>
                         <ListItem button>
-                            <div className={s.item}>
-                                <NavLink to='/profile' activeClassName={s.activeLink}>Profile</NavLink>
-                            </div>
-                        </ListItem>
-                        <ListItem button>
-                            <div className={s.item}>
-                                <NavLink to='/friends' activeClassName={s.activeLink}>Friends</NavLink>
-                            </div>
-                        </ListItem>
-                        <ListItem button>
-                            <div className={s.item}>
                                 {props.newMessagesCount > 0
                                     ? <Badge badgeContent={props.newMessagesCount} color="secondary">
-                                        <NavLink to='/dialogs' activeClassName={s.activeLink}>Dialogs</NavLink>
+                                        Dialogs
                                     </Badge>
-                                    : <NavLink to='/dialogs' activeClassName={s.activeLink}>Dialogs</NavLink>}
-                            </div>
+                                    : <>Dialogs</>}
                         </ListItem>
-                        <ListItem button>
-                            <div className={s.item}>
-                                <NavLink to='/users' activeClassName={s.activeLink}>Users</NavLink>
-                            </div>
-                        </ListItem>
+                        </NavLink>
+                        </div>
+                        <div className={s.item}>
+                        <NavLink to='/users' activeClassName={s.activeLink}>
+                        <ListItem button>Users</ListItem>
+                        </NavLink>
+                        </div>
                     </List>
                     <div className={classes.grow}/>
-                    <div className={classes.sectionDesktop}>
+                    <div className={`${classes.sectionDesktop} ${s.item}`}>
                         {props.isAuth ?
+                            <NavLink to='/login' activeClassName={s.activeLink}>
                             <ListItem button onClick={props.logout} color="inherit">
                                 <div className={s.item}>
-                                    <NavLink to='/login' activeClassName={s.activeLink}>Logout</NavLink>
+                                    Logout
                                 </div>
                             </ListItem>
+                            </NavLink>
                             : ''}
                     </div>
                     <div className={classes.sectionMobile}>

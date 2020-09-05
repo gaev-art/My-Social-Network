@@ -44,7 +44,7 @@ const ProfileDataForm = (props) => {
         <div>
             <b>Contacts</b>:{Object.keys(props.profile.contacts).map(key => {
             return <div key={key} className={s.contact}>
-                <Field style={{width: '500px'}} type="text" name={'contacts.' + key} component={renderTextField}
+                <Field type="text" name={'contacts.' + key} component={renderTextField}
                        label={key}/>
             </div>
         })}

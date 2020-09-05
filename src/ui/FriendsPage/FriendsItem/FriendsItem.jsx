@@ -26,7 +26,7 @@ const FriendsItem = (props) => {
                                 ? props.friend.photos.small : ava}
                             className={style.img}/>
                     </ListItemIcon>
-                    <div style={{width:'600px'}}>
+                    <div style={{width:'200px'}}>
                         {props.friend.name}
                     </div>
                 </ListItem>

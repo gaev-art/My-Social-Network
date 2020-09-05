@@ -24,7 +24,7 @@ const User = (props) => {
                             src={props.user.photos.small != null
                                 ? props.user.photos.small : ava}
                             className={style.img}/>
-                    <div style={{width: '600px'}}>
+                    <div style={{width: '200px'}}>
                         {props.user.name}
                     </div>
                 </ListItem>

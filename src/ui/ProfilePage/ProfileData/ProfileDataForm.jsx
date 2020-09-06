@@ -53,8 +53,8 @@ const ProfileDataForm = (props) => {
             {props.error}
         </div>}
         <div>
-            <Button type="submit">save</Button>
-            <Button onClick={props.cancelEditMode}>cancel</Button>
+            <Button color="secondary" type="submit">save</Button>
+            <Button color="secondary" onClick={props.cancelEditMode}>cancel</Button>
         </div>
     </form>
 }

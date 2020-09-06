@@ -1,9 +1,20 @@
-.main {
-    display:flex;
-
+.root{
+    width: 50%;
 }
 
+@media (max-width: 760px) {
+    .root {
+        width: 90%
+    }
+}
 
+.main {
+    display:flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    padding: 0;
+
+}
 
 
 .img {
@@ -13,23 +24,25 @@
 }
 
 
-
-.item {
-
+.button{
+    padding:0;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
 }
 
-.item a {
+
+
+.main a {
     color: #000000;
     text-decoration: none;
     font-size: 20px;
 }
 
-.item a.activeLink {
+.main a.activeLink {
     color: #dc004e;
 }
 
-.button{
-    display: flex;
-    vertical-align: middle;
-    align-items: center;
-}
+
+
+

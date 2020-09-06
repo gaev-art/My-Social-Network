@@ -11,6 +11,13 @@ import {
     unFollow,
     unFollowSuccess
 } from '../../bll/usersReducer';
+import {
+    getCurrentPage, getFollowingInProgress,
+    getIsFetching,
+    getPageSize, getPortionNumber, getPortionSize,
+    getTotalUsersCount,
+    getUsersSelector
+} from '../../bll/selectors/usersSelectors';
 
 class UsersContainer extends React.Component {
 
@@ -50,14 +57,14 @@ class UsersContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        users: state.usersPage.users,
-        pageSize: state.usersPage.pageSize,
-        totalItemsCount: state.usersPage.totalItemsCount,
-        currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching,
-        followingInProgress: state.usersPage.followingInProgress,
-        portionSize: state.usersPage.portionSize,
-        portionNumber: state.usersPage.portionNumber,
+        users: getUsersSelector,
+        pageSize: getPageSize,
+        totalItemsCount: getTotalUsersCount,
+        currentPage: getCurrentPage,
+        isFetching: getIsFetching,
+        followingInProgress: getFollowingInProgress,
+        portionSize: getPortionSize,
+        portionNumber: getPortionNumber,
     }
 }
 

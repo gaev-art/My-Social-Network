@@ -1,7 +1,19 @@
+.root{
+    width: 50%;
+}
+
+@media (max-width: 760px) {
+    .root {
+        width: 90%
+    }
+}
 
 .main {
     display:flex;
+    justify-content: space-between;
     vertical-align: middle;
+    padding: 0;
+
 }
 
 
@@ -13,15 +25,20 @@
     border-radius: 100px;
 }
 
+.icon{
+    padding:0;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+
 
 
 .main a {
-    /*padding: 10px;*/
     color: #000000;
     text-decoration: none;
     display: flex;
-    margin-top: 5px;
-    padding: 5px;
     vertical-align: middle;
 
 

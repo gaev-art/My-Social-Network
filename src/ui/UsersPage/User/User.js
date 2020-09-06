@@ -7,7 +7,6 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
 import List from '@material-ui/core/List';
 import IconButton from '@material-ui/core/IconButton';
-import s from '../../Header/Header.module.css';
 
 
 const User = (props) => {
@@ -15,24 +14,24 @@ const User = (props) => {
     const path = '/profile/' + props.user.id;
 
     return (
+        <div className={style.root}>
         <List className={style.main}>
-            <div className={s.item}>
             <NavLink to={path} activeClassName={style.activeLink}>
-                <ListItem button>
+                <ListItem style={{padding:'0px'}} button>
                         <img
                             alt=''
                             src={props.user.photos.small != null
                                 ? props.user.photos.small : ava}
                             className={style.img}/>
-                    <div style={{width: '200px'}}>
+                    <div className={style.name}>
                         {props.user.name}
                     </div>
                 </ListItem>
             </NavLink>
-            </div>
             <div className={style.button}>
                 {props.user.followed
                     ? <IconButton
+                        style={{padding:'0px'}}
                         aria-label="unFollow"
                         disabled={props.followingInProgress
                             .some(id => id === props.user.id)}
@@ -42,6 +41,7 @@ const User = (props) => {
                         <RemoveIcon>UnFollow</RemoveIcon>
                     </IconButton>
                     : <IconButton
+                        style={{padding:'0px'}}
                         aria-label="follow"
                         disabled={props.followingInProgress
                             .some(id => id === props.user.id)}
@@ -52,6 +52,7 @@ const User = (props) => {
                     </IconButton>}
             </div>
         </List>
+        </div>
     )
 }
 

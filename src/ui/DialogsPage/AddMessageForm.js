@@ -16,7 +16,7 @@ function AddMessageForm(props) {
             />
         </div>
         <div>
-            <Button type="submit">Send</Button>
+            <Button color="secondary" type="submit">Send</Button>
 
         </div>
     </form>;

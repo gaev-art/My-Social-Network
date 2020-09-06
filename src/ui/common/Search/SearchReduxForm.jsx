@@ -16,7 +16,7 @@ export const SearchForm = (props) => {
                 Сервер принимает только латинские буквы и цифры
             </div>
             <div>
-                <Button type="submit">Search</Button>
+                <Button  color="secondary" type="submit">Search</Button>
             </div>
         </form>
     )

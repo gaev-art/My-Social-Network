@@ -27,7 +27,7 @@ const LoginReduxForm = props => {
             </div>
             }
             <div style={{margin:'10px'}}>
-                <Button type="submit">Login</Button>
+                <Button color="secondary" type="submit">Login</Button>
             </div>
         </form>
     )

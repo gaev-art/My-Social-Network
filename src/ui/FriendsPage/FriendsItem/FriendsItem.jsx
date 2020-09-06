@@ -16,9 +16,10 @@ const FriendsItem = (props) => {
 
 
     return (
+        <div className={style.root}>
         <List className={style.main}>
             <NavLink to={path} activeClassName={style.activeLink}>
-                <ListItem button>
+                <ListItem style={{padding:'0px'}} button>
                     <ListItemIcon>
                         <img
                             alt=''
@@ -26,16 +27,14 @@ const FriendsItem = (props) => {
                                 ? props.friend.photos.small : ava}
                             className={style.img}/>
                     </ListItemIcon>
-                    <div style={{width:'200px'}}>
                         {props.friend.name}
-                    </div>
                 </ListItem>
             </NavLink>
-            <div style={{display: 'flex', verticalAlign: 'middle', alignItems: 'center'}}>
-                <IconButton aria-label="message" onClick={() => {
+            <div className={style.icon}>
+                <IconButton style={{padding:'0px'}} aria-label="message" onClick={() => {
                     props.openDialogs(props.friend.id)
                 }}>
-                    <EmailIcon/>
+                    <EmailIcon />
                 </IconButton>
                 <IconButton aria-label="delete" onClick={() => {
                     props.unFollowFriend(props.friend.id)
@@ -44,6 +43,7 @@ const FriendsItem = (props) => {
                 </IconButton>
             </div>
         </List>
+        </div>
     );
 }
 

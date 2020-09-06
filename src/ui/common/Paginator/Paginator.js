@@ -30,8 +30,8 @@ function Paginator(props) {
         <div>
             {props.portionNumber > 1 &&
             <>
-                <Button onClick={setFirstPage}>first</Button>
-                <Button onClick={decrementPage}>Prev</Button>
+                <Button color="secondary" onClick={setFirstPage}>first</Button>
+                <Button color="secondary" onClick={decrementPage}>Prev</Button>
             </>}
 
             {pages
@@ -44,7 +44,7 @@ function Paginator(props) {
                         }}>{p}</Button>
                 })}
             {portionCount > props.portionNumber &&
-            <Button onClick={incrementPage}>Next</Button>}
+            <Button color="secondary" onClick={incrementPage}>Next</Button>}
         </div>
     )
 }

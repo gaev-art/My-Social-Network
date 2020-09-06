@@ -34,7 +34,7 @@ export const ProfileData = (props) => {
         </div>
         {props.isOwner &&
         <div>
-            <Button onClick={props.goToEditMode}>edit</Button>
+            <Button color="secondary" onClick={props.goToEditMode}>edit</Button>
         </div>}
     </div>
 }

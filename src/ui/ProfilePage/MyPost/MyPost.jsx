@@ -16,7 +16,7 @@ function AddNewPost(props) {
                 name={'newPostText'}
                 placeholder='Enter your post'/>
         <div>
-            <Button type="submit">Add post</Button>
+            <Button color="secondary" type="submit">Add post</Button>
         </div>
     </form>;
 }

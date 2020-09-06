@@ -85,7 +85,7 @@ export default function Header(props) {
             transformOrigin={{vertical: 'top', horizontal: 'right'}}
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}>
-            <ListItem button>
+            <ListItem onClick={handleMobileMenuClose} button>
                 <ListItemIcon>
                     <AccountBoxIcon/>
                 </ListItemIcon>
@@ -93,7 +93,7 @@ export default function Header(props) {
                     <NavLink to='/profile' activeClassName={s.activeLink}>Profile</NavLink>
                 </div>
             </ListItem>
-            <ListItem button>
+            <ListItem onClick={handleMobileMenuClose} button>
                 <ListItemIcon>
                     <SentimentVerySatisfiedIcon/>
                 </ListItemIcon>
@@ -101,7 +101,7 @@ export default function Header(props) {
                     <NavLink to='/friends' activeClassName={s.activeLink}>Friends</NavLink>
                 </div>
             </ListItem>
-            <ListItem button>
+            <ListItem onClick={handleMobileMenuClose} button>
                 <ListItemIcon>
                     {props.newMessagesCount > 0
                         ? <Badge badgeContent={props.newMessagesCount} color="secondary">
@@ -112,7 +112,7 @@ export default function Header(props) {
                     <NavLink to='/dialogs' activeClassName={s.activeLink}>Dialogs</NavLink>
                 </div>
             </ListItem>
-            <ListItem button>
+            <ListItem onClick={handleMobileMenuClose} button>
                 <ListItemIcon>
                     <PeopleIcon/>
                 </ListItemIcon>
@@ -121,7 +121,7 @@ export default function Header(props) {
                 </div>
             </ListItem>
             <Divider/>
-            <ListItem button>
+            <ListItem onClick={handleMobileMenuClose} button>
                 <ListItemIcon>
                     <ExitToAppIcon/>
                 </ListItemIcon>

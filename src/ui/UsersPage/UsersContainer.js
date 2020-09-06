@@ -57,14 +57,14 @@ class UsersContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        users: getUsersSelector,
-        pageSize: getPageSize,
-        totalItemsCount: getTotalUsersCount,
-        currentPage: getCurrentPage,
-        isFetching: getIsFetching,
-        followingInProgress: getFollowingInProgress,
-        portionSize: getPortionSize,
-        portionNumber: getPortionNumber,
+        users: getUsersSelector(state),
+        pageSize: getPageSize(state),
+        totalItemsCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetching(state),
+        followingInProgress: getFollowingInProgress(state),
+        portionSize: getPortionSize(state),
+        portionNumber: getPortionNumber(state),
     }
 }
 

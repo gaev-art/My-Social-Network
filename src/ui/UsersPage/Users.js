@@ -23,6 +23,7 @@ export const Users = (props) => {
                 onPageChanged={props.onPageChanged}/>
             {props.isFetching ? <PreloaderInit/> :
                 <div className={style.users}>
+
                     {props.users.map(u => {
                             return <User key={u.id}
                                          user={u}

@@ -1,4 +1,4 @@
-import s from '../Profile.module.css';
+import s from './ProfileData.module.css';
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
@@ -29,13 +29,12 @@ export const Contact = ({contactTitle, contactValue}) => {
         } else if (contactTitle === 'vk') {
             contactTitle = <FontAwesomeIcon icon={faLinkedinIn} size='2x'/>
         } else if (contactTitle === 'mainLink') {
-            return contactValue = <FontAwesomeIcon icon={faLinkedinIn} size='2x'/>
+            contactTitle = <FontAwesomeIcon icon={faLinkedinIn} size='2x'/>
         }
     }
 
-    return <div className={s.contact}>
-        <a href = {`${contactValue}`} >
+    return <a href = {`${contactValue}`}  className={s.root}>
             {contactValue !== '' && contactTitle}
         </a>
-    </div>
+
 };

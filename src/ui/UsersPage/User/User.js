@@ -28,7 +28,6 @@ function ScrollTop(props) {
 
     const handleClick = (event) => {
         const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
-
         if (anchor) {
             anchor.scrollIntoView({behavior: 'smooth', block: 'center'});
         }
@@ -36,7 +35,7 @@ function ScrollTop(props) {
 
     return (
         <Zoom in={trigger}>
-            <div onClick={handleClick} role="presentation" className={classes.root}>
+            <div onClick={handleClick} className={classes.root}>
                 {children}
             </div>
         </Zoom>
@@ -49,17 +48,15 @@ const User = (props) => {
 
     return (<>
             <div className={style.root}>
-                <NavLink to={path} activeClassName={style.activeLink}>
-                            <img
-                                alt=''
-                                src={props.user.photos.small != null
-                                    ? props.user.photos.small : ava}
-                                className={style.img}/>
-                            <div>
-                                {props.user.name}
-                            </div>
+                <NavLink to={path}>
+                    <img
+                        alt=''
+                        src={props.user.photos.small != null
+                            ? props.user.photos.small : ava}
+                        className={style.img}/>
+                    <div>{props.user.name}</div>
                 </NavLink>
-                <div className={style.button}>
+                <div>
                     {props.user.followed
                         ? <IconButton
                             aria-label="unFollow"
@@ -67,18 +64,14 @@ const User = (props) => {
                                 .some(id => id === props.user.id)}
                             onClick={() => {
                                 props.unFollow(props.user.id)
-                            }}>
-                            Unsubscribe
-                        </IconButton>
+                            }}>Unsubscribe</IconButton>
                         : <IconButton
                             aria-label="follow"
                             disabled={props.followingInProgress
                                 .some(id => id === props.user.id)}
                             onClick={() => {
                                 props.follow(props.user.id)
-                            }}>
-                            Subscribe
-                        </IconButton>}
+                            }}>Subscribe</IconButton>}
                 </div>
             </div>
             <ScrollTop {...props}>

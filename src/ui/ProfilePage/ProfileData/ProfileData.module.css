@@ -1,0 +1,9 @@
+.root{
+    margin-left: 20px;
+    color: #4d4949;
+}
+.formSummaryError {
+    border: red 1px solid;
+    padding: 5px;
+    color: indianred;
+}

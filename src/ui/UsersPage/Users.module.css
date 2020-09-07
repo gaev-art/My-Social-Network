@@ -1,17 +1,2 @@
-.main {
-    text-align: center;
-}
-.root {
-    flex-grow: 1;
-    max-width: 752px;
-    height: 100px;
-    margin: 10px;
-}
 
-.users {
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-}
 

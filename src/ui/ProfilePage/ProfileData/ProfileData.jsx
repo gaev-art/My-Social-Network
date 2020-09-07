@@ -19,7 +19,7 @@ export const ProfileData = (props) => {
                 <b>About Me : </b>{props.profile.aboutMe}
             </div>
             <div>
-                <b>Contacts</b>:{Object.keys(props.profile.contacts)
+                <div><b>Contacts : </b></div>{Object.keys(props.profile.contacts)
                 .filter(key => props.profile.contacts[key])
                 .map(key => {
                     return <Contact

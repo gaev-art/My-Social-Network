@@ -1,14 +1,7 @@
 .root{
-    color: #000000;
-    text-decoration: none;
     margin: 15px;
 }
 
-@media (max-width: 760px) {
-    .root {
-        width: 90%
-    }
-}
 
 
 .img {
@@ -18,28 +11,11 @@
 }
 
 
-.button{
-    padding-left:0;
-    display: flex;
-    vertical-align: middle;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
 .root a {
-    width: 100%;
     color: #000000;
     text-decoration: none;
     font-size: 20px;
 }
-
-.root a.activeLink {
-    color: #dc004e;
-}
-
-
 
 .scroll{
     position: fixed;

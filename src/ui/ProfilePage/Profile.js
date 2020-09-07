@@ -1,6 +1,5 @@
 import React from 'react';
 import ava from '../../img/ava.png'
-import style from './Profile.module.css'
 import ProfileDataForm from './ProfileData/ProfileDataForm';
 import {ProfileData} from './ProfileData/ProfileData';
 import ProfileStatus from './Status/ProfileStatus';
@@ -24,7 +23,7 @@ export const Profile = (props) => {
     }
 
     return (
-        <div className={` ${style.root}`}>
+        <div>
             <div>
                 <img
                     alt=''
@@ -47,9 +46,10 @@ export const Profile = (props) => {
                         isOwner={props.isOwner}
                         goToEditMode={() => {
                             props.setEditMode(true)
-                        }}/>}</div>
+                        }}/>}
+            </div>
             {props.isOwner &&
-            <MyPostContainer profile={props.profile}/>}
+            <MyPostContainer/>}
         </div>
 
     )

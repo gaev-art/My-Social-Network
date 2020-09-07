@@ -9,6 +9,7 @@ let mapStateToProps = (state) => {
         newPostText: state.profilePage.newPostText,
         photo: state.profilePage.profile.photos.large,
         fullName: state.profilePage.profile.fullName,
+        profile: state.profilePage.profile,
     }
 }
 

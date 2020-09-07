@@ -1,16 +1,14 @@
 import React from 'react';
-import style from './Users.module.css';
 import Search from '../common/Search/Search';
 import Paginator from '../common/Paginator/Paginator';
 import User from './User/User';
 import PreloaderInit from '../common/Preloaders/PreloaderForInit';
-import Toolbar from '@material-ui/core/Toolbar';
 
 
 export const Users = (props) => {
     return (
-        <div className={style.main}>
-            <h3>Users:</h3>
+        <div>
+            <h3 id="back-to-top-anchor">Users:</h3>
             <Search searchName={props.searchName}/>
             <Paginator
                 nextPortion={props.nextPortion}
@@ -23,8 +21,7 @@ export const Users = (props) => {
                 pageSize={props.pageSize}
                 onPageChanged={props.onPageChanged}/>
             {props.isFetching ? <PreloaderInit/> :
-                <div className={style.users}>
-                    <Toolbar id="back-to-top-anchor"/>
+                <div>
                     {props.users.map(u => {
                             return <User key={u.id}
                                          user={u}

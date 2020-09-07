@@ -9,7 +9,7 @@ import FriendsContainer from './FriendsPage/FriendsContainer';
 import DialogsContainer from './DialogsPage/DialogsContainer';
 
 
-function App(props) {
+function App() {
 
 
     return (

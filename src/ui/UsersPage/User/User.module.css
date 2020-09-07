@@ -1,5 +1,10 @@
 .root{
     width: 50%;
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    vertical-align: middle;
+    justify-content: space-between;
 }
 
 @media (max-width: 760px) {
@@ -10,7 +15,7 @@
 
 .main {
     display:flex;
-    justify-content: space-between;
+
     vertical-align: middle;
     padding: 0;
 
@@ -33,16 +38,21 @@
 
 
 
-.main a {
+.root a {
+    width: 100%;
     color: #000000;
     text-decoration: none;
     font-size: 20px;
 }
 
-.main a.activeLink {
+.root a.activeLink {
     color: #dc004e;
 }
 
 
+
+.scroll{
+    position: fixed;
+}
 
 

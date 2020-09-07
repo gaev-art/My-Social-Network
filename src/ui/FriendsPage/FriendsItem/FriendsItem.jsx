@@ -15,26 +15,26 @@ const FriendsItem = (props) => {
     const path = '/profile/' + props.friend.id;
 
 
-    return (
-        <div className={style.root}>
-        <List className={style.main}>
+    return (<div className={style.root}>
             <NavLink to={path} activeClassName={style.activeLink}>
-                <ListItem style={{padding:'0px'}} button>
-                    <ListItemIcon>
-                        <img
-                            alt=''
-                            src={props.friend.photos.small != null
-                                ? props.friend.photos.small : ava}
-                            className={style.img}/>
-                    </ListItemIcon>
+                <List className={style.main}>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <img
+                                alt=''
+                                src={props.friend.photos.small != null
+                                    ? props.friend.photos.small : ava}
+                                className={style.img}/>
+                        </ListItemIcon>
                         {props.friend.name}
-                </ListItem>
+                    </ListItem>
+                </List>
             </NavLink>
             <div className={style.icon}>
-                <IconButton style={{padding:'0px'}} aria-label="message" onClick={() => {
+                <IconButton aria-label="message" onClick={() => {
                     props.openDialogs(props.friend.id)
                 }}>
-                    <EmailIcon />
+                    <EmailIcon/>
                 </IconButton>
                 <IconButton aria-label="delete" onClick={() => {
                     props.unFollowFriend(props.friend.id)
@@ -42,7 +42,6 @@ const FriendsItem = (props) => {
                     <DeleteIcon/>
                 </IconButton>
             </div>
-        </List>
         </div>
     );
 }

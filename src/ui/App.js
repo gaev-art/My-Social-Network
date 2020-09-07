@@ -14,8 +14,7 @@ function App(props) {
 
     return (
         <div className={style.appWrapper}>
-            <HeaderContainer />
-            {/*<Navbar newMessagesCount={props.newMessagesCount}/>*/}
+            <HeaderContainer/>
             <div className={style.appWrapperContent}>
                 <Switch>
                     <Route exact path='/' render={() => <Redirect from="/" to="/profile"/>}/>
@@ -24,7 +23,7 @@ function App(props) {
                     <Route path='/users/:userId?' render={() => <UsersContainer/>}/>
                     <Route path='/friends' render={() => <FriendsContainer/>}/>
                     <Route path='/dialogs/:userId?' render={(props) =>
-                        <DialogsContainer userId={props.match.params.userId} />}/>
+                        <DialogsContainer userId={props.match.params.userId}/>}/>
                     <Route path='/login' render={() => <Login/>}/>
                 </Switch>
             </div>

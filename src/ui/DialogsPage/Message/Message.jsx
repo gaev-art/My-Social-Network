@@ -17,9 +17,9 @@ const Message = (props) => {
 
     return (
         <React.Fragment>
-            <ListItem style={{width: '100%'}}  button>
+            <ListItem style={{width: '100%'}} button>
                 {/*<ListItemAvatar>*/}
-                {/*    <Avatar alt="Profile Picture" src={props.avatar} />*/}
+                {/*    <Avatar alt="avatar" src={props.avatar} />*/}
                 {/*</ListItemAvatar>*/}
                 <ListItemText primary={props.message.senderName} secondary={props.message.body}/>
                 <IconButton edge="end" aria-label="delete" onClick={onClickHandler}>

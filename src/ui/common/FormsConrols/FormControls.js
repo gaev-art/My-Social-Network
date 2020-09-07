@@ -19,23 +19,28 @@ const FormControl = ({input, meta, ...props}) => {
 export const Textarea = (props) => {
     const {input, meta, ...restProps} = props
     return <FormControl {...props}>
-        {/*<textarea {...input} {...restProps}/>*/}
-        <textarea style={{width:'280px'}} {...input} {...restProps} />
+
+        <textarea {...input} {...restProps} />
 
 
     </FormControl>
 
 }
 
-export const Input = (props) => {
-    const {input, meta, ...restProps} = props
-    return <FormControl {...props}>
-        <input {...input} {...restProps}/>
-
-    </FormControl>
-}
 
 export const renderTextField = ({label, input, meta: {touched, invalid, error}, ...custom}) => (
+    <TextField
+        className={style.inputForm}
+        color='secondary'
+        label={label}
+        placeholder={label}
+        error={touched && invalid}
+        helperText={touched && error}
+        {...input}
+        {...custom}/>
+)
+
+export const renderLoginField = ({label, input, meta: {touched, invalid, error}, ...custom}) => (
     <TextField
         color='secondary'
         label={label}
@@ -53,8 +58,7 @@ export const renderCheckbox = ({input, label}) => (
                 <Checkbox
                     color={'default'}
                     checked={input.value ? true : false}
-                    onChange={input.onChange}
-                />
+                    onChange={input.onChange}/>
             }
             label={label}
         />

@@ -22,7 +22,6 @@ const ProfileDataForm = (props) => {
         <div style={{margin: '10px'}}>
             <b>About Me</b>:
             <Field
-
                 type="text"
                 placeholder='About Me'
                 component={Textarea}

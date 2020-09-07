@@ -2,7 +2,7 @@ import React from 'react'
 import {Field, reduxForm} from 'redux-form'
 import Button from '@material-ui/core/Button';
 import {required, validate} from '../../utils/validators/validators';
-import {Input, renderTextField} from '../common/FormsConrols/FormControls';
+import {renderLoginField} from '../common/FormsConrols/FormControls';
 
 
 const LoginReduxForm = props => {
@@ -10,10 +10,10 @@ const LoginReduxForm = props => {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <Field name="login" component={renderTextField} label="Login"/>
+                <Field name="login" component={renderLoginField} label="Login"/>
             </div>
             <div>
-                <Field type='password' name="password" component={renderTextField} label="Password" />
+                <Field type='password' name="password" component={renderLoginField} label="Password" />
             </div>
             <div />
             {props.captchaUrl && <div>
@@ -21,7 +21,7 @@ const LoginReduxForm = props => {
                 <Field
                     type="text"
                     placeholder='Symbols from image'
-                    component={Input}
+                    component={renderLoginField}
                     name={'captcha'}
                     validate={required}/>
             </div>

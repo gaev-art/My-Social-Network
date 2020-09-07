@@ -1,8 +1,5 @@
 import React from 'react';
-import yes from '../../../img/yes.png'
-import no from '../../../img/no.png'
 import {Contact} from './Contact';
-import s from '../Profile.module.css';
 import Button from '@material-ui/core/Button';
 
 export const ProfileData = (props) => {
@@ -13,11 +10,11 @@ export const ProfileData = (props) => {
             </div>
             <div>
                 <b>Looking for a job : </b>
-                <img alt='' className={s.lookingForAJob} src={props.profile.lookingForAJob ? yes : no}/>
+                {props.profile.lookingForAJob ? 'yes' : 'no'}
             </div>
-            <div>
+            {props.profile.lookingForAJob && <div>
                 <b>My professional skill :</b> {props.profile.lookingForAJobDescription}
-            </div>
+            </div>}
             <div>
                 <b>About Me : </b>{props.profile.aboutMe}
             </div>
@@ -32,10 +29,7 @@ export const ProfileData = (props) => {
                 })}
             </div>
         </div>
-        {props.isOwner &&
-        <div>
-            <Button color="secondary" onClick={props.goToEditMode}>edit</Button>
-        </div>}
+        {props.isOwner && <Button color="secondary" onClick={props.goToEditMode}>edit</Button>}
     </div>
 }
 

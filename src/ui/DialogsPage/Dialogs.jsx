@@ -65,6 +65,15 @@ export default function Dialogs(props) {
 
     const [open, setOpen] = React.useState(false);
 
+    const handleDrawerOpen = () => {
+        setOpen(true);
+    };
+
+    const handleDrawerClose = () => {
+        setOpen(false);
+    };
+
+
     const dialogsElement = props.dialogs.map(d => <DialogItem
         key={d.id}
         dialogs={d}
@@ -79,13 +88,6 @@ export default function Dialogs(props) {
             deleteMessage={props.deleteMessage}/>
     });
 
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
-
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
 
     return (
         <div className={s.dialogs}>
@@ -120,7 +122,7 @@ export default function Dialogs(props) {
             <div className={`${s.messages} ${classes.drawerHeader} `}>
 
                 {props.messages.length < props.currentDialogsMessagesCount && <button>show prev</button>}
-                {props.currentDialogsId && <div className={s.message}>
+                {props.currentDialogsId && <div>
                     {props.loadingMessages ? <PreloaderInit/> : <>{messagesElement}</>}
                     <div>
                         <AddMessageFormRedux onSubmit={props.addNewMessage}/>

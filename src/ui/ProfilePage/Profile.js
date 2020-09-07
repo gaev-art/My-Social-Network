@@ -8,7 +8,6 @@ import MyPostContainer from './MyPost/MyPostContainer';
 import PreloaderInit from '../common/Preloaders/PreloaderForInit';
 
 
-
 export const Profile = (props) => {
 
     const onSubmit = (formData) => {

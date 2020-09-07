@@ -1,28 +1,17 @@
-.dialogs {
-    display: grid;
-}
-
-.dialogsItems {
-}
-
-
-.dialogsItems a {
-    color: #000000;
-    text-decoration: none;
+.dialogs{
     display: flex;
-    vertical-align: middle;
-}
+    justify-content: center;
 
-.dialogsItems a.activeLink {
-    color:#dc004e;
 }
-
 
 .messages {
     padding: 5px;
     margin: 5px;
-
 }
 
-
+@media (max-width: 770px) {
+    .dialogs{
+        display: block;
+    }
+}
 

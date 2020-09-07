@@ -4,6 +4,7 @@ import Search from '../common/Search/Search';
 import Paginator from '../common/Paginator/Paginator';
 import User from './User/User';
 import PreloaderInit from '../common/Preloaders/PreloaderForInit';
+import Toolbar from '@material-ui/core/Toolbar';
 
 
 export const Users = (props) => {
@@ -23,7 +24,7 @@ export const Users = (props) => {
                 onPageChanged={props.onPageChanged}/>
             {props.isFetching ? <PreloaderInit/> :
                 <div className={style.users}>
-
+                    <Toolbar id="back-to-top-anchor"/>
                     {props.users.map(u => {
                             return <User key={u.id}
                                          user={u}

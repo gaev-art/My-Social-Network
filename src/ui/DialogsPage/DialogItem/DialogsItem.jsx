@@ -19,7 +19,7 @@ const DialogItem = (props) => {
 
 
     return (
-        <List className={s.dialogsItems}>
+        <List onClick={props.handleDrawerClose} className={s.dialogsItems}>
             <NavLink to={path} activeClassName={s.activeLink}>
                 <ListItem button onClick={onClickHandler}>
                     <ListItemIcon>

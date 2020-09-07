@@ -26,7 +26,7 @@
     width: 600px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1000px) {
     .formControl textarea {
         width: 80%
     }

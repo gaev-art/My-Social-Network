@@ -1,24 +1,13 @@
 .root{
-    width: 50%;
     color: #000000;
     text-decoration: none;
-    display: flex;
-    vertical-align: middle;
-    justify-content: space-between;
+    margin: 15px;
 }
 
 @media (max-width: 760px) {
     .root {
         width: 90%
     }
-}
-
-.main {
-    display:flex;
-
-    vertical-align: middle;
-    padding: 0;
-
 }
 
 
@@ -30,9 +19,10 @@
 
 
 .button{
-    padding:0;
+    padding-left:0;
     display: flex;
     vertical-align: middle;
+    justify-content: center;
     align-items: center;
 }
 

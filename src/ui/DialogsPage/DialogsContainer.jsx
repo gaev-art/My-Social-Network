@@ -37,14 +37,10 @@ class DialogsContainer extends React.Component {
 
 
     render() {
-        return (
-            <>
-                <Dialogs
+        return <Dialogs
                     deleteMessage={this.deleteMessage}
                     addNewMessage={this.addNewMessage}
                     {...this.props}/>
-            </>
-        )
     }
 }
 

@@ -5,7 +5,7 @@ import {required, validate} from '../../utils/validators/validators';
 import {renderLoginField} from '../common/FormsConrols/FormControls';
 
 
-const LoginReduxForm = props => {
+const LoginForm = props => {
     const { handleSubmit } = props
     return (
         <form onSubmit={handleSubmit}>
@@ -36,4 +36,4 @@ const LoginReduxForm = props => {
 export default reduxForm({
     form: 'login',
     validate,
-})(LoginReduxForm)
+})(LoginForm)

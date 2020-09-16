@@ -1,4 +1,4 @@
-import {profileApi} from '../dall/prifileApi';
+import {profileApi} from '../dal/prifileApi';
 import {reset, stopSubmit} from 'redux-form';
 
 const SET_USER_PROFILE = 'SOCIAL_NETWORK/PROFILE/SET_USER_PROFILE';

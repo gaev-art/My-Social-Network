@@ -1,4 +1,4 @@
-import {authApi} from '../dall/authApi';
+import {authApi} from '../dal/authApi';
 import {stopSubmit} from 'redux-form';
 
 

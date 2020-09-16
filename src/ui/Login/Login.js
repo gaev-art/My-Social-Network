@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginReduxForm from './LoginForm';
+import LoginForm from './LoginForm';
 import {connect} from 'react-redux';
 import {login} from '../../bll/authReducer';
 import {Redirect} from 'react-router-dom';
@@ -23,7 +23,7 @@ function Login(props) {
             <div>Password: <strong>free</strong></div>
 
             <h1>Login</h1>
-            <LoginReduxForm captchaUrl={props.captchaUrl} onSubmit={onSubmit}/>
+            <LoginForm captchaUrl={props.captchaUrl} onSubmit={onSubmit}/>
         </div>
     )
 }

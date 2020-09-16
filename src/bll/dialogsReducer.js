@@ -1,4 +1,4 @@
-import {dialogsApi} from '../dall/dialogsApi';
+import {dialogsApi} from '../dal/dialogsApi';
 import {reset} from 'redux-form'
 
 

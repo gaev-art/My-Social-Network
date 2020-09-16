@@ -1,5 +1,5 @@
-import {friendsApi} from '../dall/friendsApi';
-import {usersApi} from '../dall/usersApi';
+import {friendsApi} from '../dal/friendsApi';
+import {usersApi} from '../dal/usersApi';
 
 
 export const REMOVE_FRIENDS = 'SOCIAL_NETWORK/USERS/REMOVE_FRIENDS';

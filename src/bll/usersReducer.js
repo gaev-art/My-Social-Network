@@ -1,4 +1,4 @@
-import {usersApi} from '../dall/usersApi';
+import {usersApi} from '../dal/usersApi';
 
 
 export const FOLLOW = 'SOCIAL_NETWORK/USERS/FOLLOW';

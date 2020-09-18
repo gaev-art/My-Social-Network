@@ -46,12 +46,12 @@ export const getAuthUserDate = () => async (dispatch) => {
         alert('1')
         let response = await authApi.me()
         alert('3')
-        // if (response.data.resultCode === 0) {
+        if (response.data.resultCode === 0) {
             let {id, email, login,} = response.data.data
             alert('4')
             dispatch(setAuthUserDate(id, email, login, true))
             alert('5')
-        // }
+        }
         alert(response.data.resultCode)
         alert(JSON.stringify(response.data + ' response.data'))
     } catch (e) {

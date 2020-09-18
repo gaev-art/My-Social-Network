@@ -10,6 +10,7 @@ function Login(props) {
 
     const onSubmit = (formData) => {
         props.login(formData.login, formData.password, formData.rememberMe, formData.captcha)
+        alert('логин')
     }
 
     if (props.isAuth) {

@@ -49,16 +49,21 @@ export const getAuthUserDate = () => async (dispatch) => {
     }
 }
 export const login = (email, password, rememberMe, captcha) => async (dispatch) => {
-    let response = await authApi.login(email, password, rememberMe, captcha)
-    if (response.data.resultCode === 0) {
-        dispatch(getAuthUserDate())
-    } else {
-        if (response.data.resultCode === 10) {
-            dispatch(getCaptchaUrl())
+    try {
+        let response = await authApi.login(email, password, rememberMe, captcha)
+        if (response.data.resultCode === 0) {
+            dispatch(getAuthUserDate())
+        } else {
+            if (response.data.resultCode === 10) {
+                dispatch(getCaptchaUrl())
+            }
+            let messages = response.data.messages.length > 0 ? response.data.messages[0] : 'some error'
+            dispatch(stopSubmit('login', {_error: messages}))
         }
-        let messages = response.data.messages.length > 0 ? response.data.messages[0] : 'some error'
-        dispatch(stopSubmit('login', {_error: messages}))
+    } catch (e) {
+      alert({...e})
     }
+
 }
 export const getCaptchaUrl = () => async (dispatch) => {
     const response = await authApi.getCaptchaUrl()

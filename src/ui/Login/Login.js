@@ -13,7 +13,6 @@ function Login(props) {
     }
 
     if (props.isAuth) {
-        alert('redirect')
         return <Redirect to={'/profile'}/>
     }
 

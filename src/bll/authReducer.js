@@ -48,10 +48,8 @@ export const getAuthUserDate = () => async (dispatch) => {
             let {id, email, login,} = response.data.data
             dispatch(setAuthUserDate(id, email, login, true))
         }
-        // alert(response.data.resultCode)
-        // alert(JSON.stringify(response.data + ' response.data'))
     } catch (e) {
-        alert(JSON.stringify(e.message) + 'error')
+
     }
 }
 export const login = (email, password, rememberMe, captcha) => async (dispatch) => {
@@ -67,7 +65,7 @@ export const login = (email, password, rememberMe, captcha) => async (dispatch) 
             dispatch(stopSubmit('login', {_error: messages}))
         }
     } catch (e) {
-      alert(JSON.stringify(e.message) + 'error')
+
     }
 
 }

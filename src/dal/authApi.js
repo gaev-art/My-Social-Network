@@ -3,7 +3,6 @@ import {instance} from './instance';
 
 export const authApi = {
     me() {
-        alert('2')
         return instance.get(`auth/me`)
     },
     login(email, password, rememberMe = false, captcha) {

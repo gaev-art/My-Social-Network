@@ -61,7 +61,7 @@ export const login = (email, password, rememberMe, captcha) => async (dispatch) 
             dispatch(stopSubmit('login', {_error: messages}))
         }
     } catch (e) {
-      alert({...e})
+      alert(JSON.stringify({...e}))
     }
 
 }

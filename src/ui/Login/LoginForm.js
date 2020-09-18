@@ -27,7 +27,7 @@ const LoginForm = props => {
             </div>
             }
             <div style={{margin:'10px'}}>
-                <Button color="secondary" type="submit">Add post</Button>
+                <Button color="secondary" type="submit">Login</Button>
             </div>
         </form>
     )

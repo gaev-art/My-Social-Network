@@ -42,10 +42,18 @@ export const getCaptchaUrlSuccess = (url) => ({type: GET_CAPTCHA_URL, url})
 //Thunk
 
 export const getAuthUserDate = () => async (dispatch) => {
-    let response = await authApi.me()
-    if (response.data.resultCode === 0) {
-        let {id, email, login,} = response.data.data
-        dispatch(setAuthUserDate(id, email, login, true))
+    try {
+        alert('1')
+        let response = await authApi.me()
+        alert('3')
+        if (response.data.resultCode === 0) {
+            let {id, email, login,} = response.data.data
+            alert('4')
+            dispatch(setAuthUserDate(id, email, login, true))
+            alert('5')
+        }
+    } catch (e) {
+        alert(JSON.stringify(e.message) + 'error 5')
     }
 }
 export const login = (email, password, rememberMe, captcha) => async (dispatch) => {

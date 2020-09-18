@@ -30,6 +30,7 @@ class ProfileContainer extends React.Component {
 
 
     componentDidMount() {
+        alert('profile')
         this.refreshProfile()
 
     }

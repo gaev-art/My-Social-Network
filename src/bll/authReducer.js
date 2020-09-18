@@ -50,25 +50,15 @@ export const getAuthUserDate = () => async (dispatch) => {
 }
 export const login = (email, password, rememberMe, captcha) => async (dispatch) => {
     try {
-        alert('1')
         let response = await authApi.login(email, password, rememberMe, captcha)
-        alert('3')
-
         if (response.data.resultCode === 0) {
-            alert('4')
             dispatch(getAuthUserDate())
-            alert('5')
         } else {
             if (response.data.resultCode === 10) {
-                alert('6')
                 dispatch(getCaptchaUrl())
-                alert('7')
             }
-            alert('8')
             let messages = response.data.messages.length > 0 ? response.data.messages[0] : 'some error'
-            alert('9')
             dispatch(stopSubmit('login', {_error: messages}))
-            alert('10')
         }
     } catch (e) {
       alert(JSON.stringify(e.message) + 'error')

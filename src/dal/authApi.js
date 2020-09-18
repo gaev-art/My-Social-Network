@@ -6,7 +6,6 @@ export const authApi = {
         return instance.get(`auth/me`)
     },
     login(email, password, rememberMe = false, captcha) {
-        alert('2')
         return instance.post(`auth/login`, {email, password, rememberMe, captcha})
     },
     logout() {

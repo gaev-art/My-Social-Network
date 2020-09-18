@@ -52,6 +52,7 @@ export const getAuthUserDate = () => async (dispatch) => {
             dispatch(setAuthUserDate(id, email, login, true))
             alert('5')
         }
+        alert(response.data.resultCode)
     } catch (e) {
         alert(JSON.stringify(e.message) + 'error 5')
     }

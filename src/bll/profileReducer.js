@@ -12,7 +12,13 @@ const DELETE_POST = 'SOCIAL_NETWORK/PROFILE/DELETE_POST';
 const initialState = {
     profile: null,
     status: '',
-    posts: [],
+    posts: [
+        {
+            id: 0,
+            message: 'Hello!',
+            likeCounts: '1',
+        }
+    ],
     editMode: false
 }
 

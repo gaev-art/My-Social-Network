@@ -39,7 +39,7 @@ function Paginator(props) {
                 .map((p) => {
                     return <Button
                         key={p}
-                        onClick={(e) => {
+                        onClick={() => {
                             props.onPageChanged(p);
                         }}>{p}</Button>
                 })}

@@ -19,14 +19,15 @@ export const ProfileData = (props) => {
                 <b>About Me : </b>{props.profile.aboutMe}
             </div>
             <div>
-                <div><b>Contacts : </b></div>{Object.keys(props.profile.contacts)
-                .filter(key => props.profile.contacts[key])
-                .map(key => {
-                    return <Contact
-                        key={key}
-                        contactTitle={key}
-                        contactValue={props.profile.contacts[key]}/>
-                })}
+                <div><b>Contacts : </b></div>
+                {Object.keys(props.profile.contacts)
+                    .filter(key => props.profile.contacts[key])
+                    .map(key => {
+                        return <Contact
+                            key={key}
+                            contactTitle={key}
+                            contactValue={props.profile.contacts[key]}/>
+                    })}
             </div>
         </div>
         {props.isOwner && <Button color="secondary" onClick={props.goToEditMode}>edit</Button>}

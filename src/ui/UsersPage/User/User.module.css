@@ -1,7 +1,6 @@
-.root{
+.root {
     margin: 15px;
 }
-
 
 
 .img {
@@ -17,7 +16,7 @@
     font-size: 20px;
 }
 
-.scroll{
+.scroll {
     position: fixed;
 }
 

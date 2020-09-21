@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Friends.module.css'
+import style from './Friends.module.css'
 import FriendsItem from './FriendsItem/FriendsItem';
 import PreloaderInit from '../common/Preloaders/PreloaderForInit';
 
@@ -14,9 +14,9 @@ export const Friends = (props) => {
     });
 
     return (
-        <div className={s.main}>
+        <div className={style.main}>
             <h3>Friends:</h3>
-            {props.loadingFriends ? <PreloaderInit/> : <div className={s.friend}>
+            {props.loadingFriends ? <PreloaderInit/> : <div className={style.friend}>
                 {friendsElement}
             </div>}
         </div>

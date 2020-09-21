@@ -3,7 +3,7 @@ import LoginForm from './LoginForm';
 import {connect} from 'react-redux';
 import {login} from '../../bll/authReducer';
 import {Redirect} from 'react-router-dom';
-import s from './Login.module.css'
+import style from './Login.module.css'
 
 
 function Login(props) {
@@ -17,7 +17,7 @@ function Login(props) {
     }
 
     return (
-        <div className={s.main}>
+        <div className={style.main}>
             <h3>For test use:</h3>
             <div>Email: <strong>free@samuraijs.com</strong></div>
             <div>Password: <strong>free</strong></div>

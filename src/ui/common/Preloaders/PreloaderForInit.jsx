@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function PreloaderInit(props) {
+function PreloaderInit() {
 
     const classes = useStyles();
 

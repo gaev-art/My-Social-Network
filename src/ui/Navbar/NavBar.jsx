@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Navbar.module.css'
+import style from './Navbar.module.css'
 import {NavLink} from 'react-router-dom';
 import {makeStyles} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
@@ -19,45 +19,45 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Navbar(props) {
+export default props => {
     const classes = useStyles();
 
     return (
-        <div className={`${classes.root} ${s.nav}`}>
+        <div className={`${classes.root} ${style.nav}`}>
             <List component="nav" aria-label="main mailbox folders">
                 <ListItem button>
                     <ListItemIcon>
                         <AccountBoxIcon/>
                     </ListItemIcon>
-                    <div className={s.item}>
-                        <NavLink to='/profile' activeClassName={s.activeLink}>Profile</NavLink>
+                    <div className={style.item}>
+                        <NavLink to='/profile' activeClassName={style.activeLink}>Profile</NavLink>
                     </div>
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
                         <PeopleIcon/>
                     </ListItemIcon>
-                    <div className={s.item}>
-                        <NavLink to='/friends' activeClassName={s.activeLink}>Friends</NavLink>
+                    <div className={style.item}>
+                        <NavLink to='/friends' activeClassName={style.activeLink}>Friends</NavLink>
                     </div>
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
                         <EmailIcon/>
                     </ListItemIcon>
-                    <div className={s.item}>
+                    <div className={style.item}>
                         {props.newMessagesCount > 0
                             ? <Badge badgeContent={props.newMessagesCount} color="secondary">
-                                <NavLink to='/dialogs' activeClassName={s.activeLink}>Dialogs</NavLink>
-                            </Badge> : <NavLink to='/dialogs' activeClassName={s.activeLink}>Dialogs</NavLink>}
+                                <NavLink to='/dialogs' activeClassName={style.activeLink}>Dialogs</NavLink>
+                            </Badge> : <NavLink to='/dialogs' activeClassName={style.activeLink}>Dialogs</NavLink>}
                     </div>
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
                         <PeopleIcon/>
                     </ListItemIcon>
-                    <div className={s.item}>
-                        <NavLink to='/users' activeClassName={s.activeLink}>Users</NavLink>
+                    <div className={style.item}>
+                        <NavLink to='/users' activeClassName={style.activeLink}>Users</NavLink>
                     </div>
                 </ListItem>
             </List>

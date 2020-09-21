@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './DialogItem.module.css';
+import style from './DialogItem.module.css';
 import {NavLink} from 'react-router-dom';
 import ava from '../../../img/ava.png';
 import List from '@material-ui/core/List';
@@ -19,14 +19,14 @@ const DialogItem = (props) => {
 
 
     return (
-        <List onClick={props.handleDrawerClose} className={s.dialogsItems}>
-            <NavLink to={path} activeClassName={s.activeLink}>
+        <List onClick={props.handleDrawerClose} className={style.dialogsItems}>
+            <NavLink to={path} activeClassName={style.activeLink}>
                 <ListItem button onClick={onClickHandler}>
                     <ListItemIcon>
                         <img
                             alt=''
                             src={props.dialogs.photos.small != null ? props.dialogs.photos.small : ava}
-                            className={s.img}/>
+                            className={style.img}/>
                     </ListItemIcon>
                     <div>
                         {props.dialogs.hasNewMessages > 0

@@ -1,12 +1,12 @@
 import React from 'react';
-import s from './Preloader.module.css'
+import style from './Preloader.module.css'
 import preloader from '../../../img/preloader.gif'
 
-function Preloader(props) {
+function Preloader() {
     return (
-        <div className={s.main}>
+        <div className={style.main}>
             <h2>
-                <img alt='' src={preloader} className={s.preloader}/>
+                <img alt='' src={preloader} className={style.preloader}/>
                 Loading</h2>
 
         </div>

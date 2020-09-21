@@ -1,16 +1,29 @@
-.dialogs{
+
+.drawer {
+    width: 240px;
+
+}
+
+@media (max-width: 500px) {
+    .drawer {
+        width: 100%;
+    }
+}
+
+
+.dialogs {
     display: flex;
     justify-content: center;
 
 }
 
+
 .messages {
-    padding: 5px;
-    margin: 5px;
+
 }
 
 @media (max-width: 770px) {
-    .dialogs{
+    .dialogs {
         display: block;
     }
 }

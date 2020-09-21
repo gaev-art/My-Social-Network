@@ -1,5 +1,4 @@
 
-
 .dialogsItems a {
     /*padding: 10px;*/
     color: #000000;
@@ -11,7 +10,7 @@
 }
 
 .dialogsItems a.activeLink {
-    color:#dc004e;
+    color: #dc004e;
 }
 
 

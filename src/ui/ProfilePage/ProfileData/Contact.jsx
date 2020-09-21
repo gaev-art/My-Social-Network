@@ -1,4 +1,4 @@
-import s from './ProfileData.module.css';
+import style from './ProfileData.module.css';
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
@@ -19,7 +19,7 @@ export const Contact = ({contactTitle, contactValue}) => {
         } else if (contactTitle === 'twitter') {
             contactTitle = <FontAwesomeIcon icon={faTwitter} size='2x'/>
         } else if (contactTitle === 'website') {
-            contactTitle = <FontAwesomeIcon icon={faAddressCard}  size='2x'/>
+            contactTitle = <FontAwesomeIcon icon={faAddressCard} size='2x'/>
         } else if (contactTitle === 'instagram') {
             contactTitle = <FontAwesomeIcon icon={faInstagram} size='2x'/>
         } else if (contactTitle === 'youtube') {
@@ -33,8 +33,8 @@ export const Contact = ({contactTitle, contactValue}) => {
         }
     }
 
-    return <a href = {`${contactValue}`}  className={s.root}>
-            {contactValue !== '' && contactTitle}
-        </a>
+    return <a href={`${contactValue}`} className={style.root}>
+        {contactValue !== '' && contactTitle}
+    </a>
 
 };

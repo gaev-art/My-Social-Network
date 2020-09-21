@@ -45,7 +45,7 @@ class ProfileStatus extends React.Component {
         return (
             <>
                 {!this.state.editMode
-                    ? <div style={{margin:'10px'}}>
+                    ? <div style={{margin: '10px'}}>
                         <span
                             onDoubleClick={this.activateEditMode}>
                             <b>Status : </b> {this.props.status || 'No status'}
@@ -53,7 +53,7 @@ class ProfileStatus extends React.Component {
                     </div>
                     : <div>
                         Status:
-                        <div style={{margin:'10px'}}>
+                        <div style={{margin: '10px'}}>
                             <Field
                                 name="status"
                                 component={renderTextField}

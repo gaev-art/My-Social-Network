@@ -1,6 +1,5 @@
 import React from 'react';
 import Dialogs from './Dialogs';
-
 import {compose} from 'redux';
 import {connect} from 'react-redux';
 import {WithAuthRedirect} from '../Hoc/WithAuthRedirect';
@@ -38,9 +37,9 @@ class DialogsContainer extends React.Component {
 
     render() {
         return <Dialogs
-                    deleteMessage={this.deleteMessage}
-                    addNewMessage={this.addNewMessage}
-                    {...this.props}/>
+            deleteMessage={this.deleteMessage}
+            addNewMessage={this.addNewMessage}
+            {...this.props}/>
     }
 }
 

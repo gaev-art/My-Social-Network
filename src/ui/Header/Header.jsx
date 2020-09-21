@@ -9,7 +9,7 @@ import Menu from '@material-ui/core/Menu';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import s from './Header.module.css';
+import style from './Header.module.css';
 import ListItem from '@material-ui/core/ListItem';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import PeopleIcon from '@material-ui/icons/People';
@@ -89,16 +89,16 @@ export default function Header(props) {
                 <ListItemIcon>
                     <AccountBoxIcon/>
                 </ListItemIcon>
-                <div className={s.item}>
-                    <NavLink to='/profile' activeClassName={s.activeLink}>Profile</NavLink>
+                <div className={style.item}>
+                    <NavLink to='/profile' activeClassName={style.activeLink}>Profile</NavLink>
                 </div>
             </ListItem>
             <ListItem onClick={handleMobileMenuClose} button>
                 <ListItemIcon>
                     <SentimentVerySatisfiedIcon/>
                 </ListItemIcon>
-                <div className={s.item}>
-                    <NavLink to='/friends' activeClassName={s.activeLink}>Friends</NavLink>
+                <div className={style.item}>
+                    <NavLink to='/friends' activeClassName={style.activeLink}>Friends</NavLink>
                 </div>
             </ListItem>
             <ListItem onClick={handleMobileMenuClose} button>
@@ -108,16 +108,16 @@ export default function Header(props) {
                             <EmailIcon/>
                         </Badge> : <EmailIcon/>}
                 </ListItemIcon>
-                <div className={s.item}>
-                    <NavLink to='/dialogs' activeClassName={s.activeLink}>Dialogs</NavLink>
+                <div className={style.item}>
+                    <NavLink to='/dialogs' activeClassName={style.activeLink}>Dialogs</NavLink>
                 </div>
             </ListItem>
             <ListItem onClick={handleMobileMenuClose} button>
                 <ListItemIcon>
                     <PeopleIcon/>
                 </ListItemIcon>
-                <div className={s.item}>
-                    <NavLink to='/users' activeClassName={s.activeLink}>Users</NavLink>
+                <div className={style.item}>
+                    <NavLink to='/users' activeClassName={style.activeLink}>Users</NavLink>
                 </div>
             </ListItem>
             <Divider/>
@@ -126,8 +126,8 @@ export default function Header(props) {
                     <ExitToAppIcon/>
                 </ListItemIcon>
                 {props.isAuth &&
-                <div className={s.item}>
-                    <NavLink to={'/login'} activeClassName={s.activeLink} onClick={props.logout}>Logout</NavLink>
+                <div className={style.item}>
+                    <NavLink to={'/login'} activeClassName={style.activeLink} onClick={props.logout}>Logout</NavLink>
                 </div>}
             </ListItem>
         </Menu>
@@ -140,43 +140,43 @@ export default function Header(props) {
                 <Toolbar>
                     <Typography variant={'h6'}>My Social Network</Typography>
                     <div className={classes.grow}/>
-                    <List className={s.nav}>
-                        <div className={s.item}>
-                        <NavLink to='/profile' activeClassName={s.activeLink}>
-                        <ListItem button>Profile</ListItem>
-                        </NavLink>
+                    <List className={style.nav}>
+                        <div className={style.item}>
+                            <NavLink to='/profile' activeClassName={style.activeLink}>
+                                <ListItem button>Profile</ListItem>
+                            </NavLink>
                         </div>
-                        <div className={s.item}>
-                        <NavLink to='/friends' activeClassName={s.activeLink}>
-                        <ListItem button>Friends</ListItem>
-                        </NavLink>
+                        <div className={style.item}>
+                            <NavLink to='/friends' activeClassName={style.activeLink}>
+                                <ListItem button>Friends</ListItem>
+                            </NavLink>
                         </div>
-                        <div className={s.item}>
-                        <NavLink to='/dialogs' activeClassName={s.activeLink}>
-                        <ListItem button>
-                                {props.newMessagesCount > 0
-                                    ? <Badge badgeContent={props.newMessagesCount} color="secondary">
-                                        Dialogs
-                                    </Badge>
-                                    : <>Dialogs</>}
-                        </ListItem>
-                        </NavLink>
+                        <div className={style.item}>
+                            <NavLink to='/dialogs' activeClassName={style.activeLink}>
+                                <ListItem button>
+                                    {props.newMessagesCount > 0
+                                        ? <Badge badgeContent={props.newMessagesCount} color="secondary">
+                                            Dialogs
+                                        </Badge>
+                                        : <>Dialogs</>}
+                                </ListItem>
+                            </NavLink>
                         </div>
-                        <div className={s.item}>
-                        <NavLink to='/users' activeClassName={s.activeLink}>
-                        <ListItem button>Users</ListItem>
-                        </NavLink>
+                        <div className={style.item}>
+                            <NavLink to='/users' activeClassName={style.activeLink}>
+                                <ListItem button>Users</ListItem>
+                            </NavLink>
                         </div>
                     </List>
                     <div className={classes.grow}/>
-                    <div className={`${classes.sectionDesktop} ${s.item}`}>
+                    <div className={`${classes.sectionDesktop} ${style.item}`}>
                         {props.isAuth ?
-                            <NavLink to='/login' activeClassName={s.activeLink}>
-                            <ListItem button onClick={props.logout} color="inherit">
-                                <div className={s.item}>
-                                    Logout
-                                </div>
-                            </ListItem>
+                            <NavLink to='/login' activeClassName={style.activeLink}>
+                                <ListItem button onClick={props.logout} color="inherit">
+                                    <div className={style.item}>
+                                        Logout
+                                    </div>
+                                </ListItem>
                             </NavLink>
                             : ''}
                     </div>

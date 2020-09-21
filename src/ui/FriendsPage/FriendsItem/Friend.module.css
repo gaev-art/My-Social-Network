@@ -1,4 +1,4 @@
-.root{
+.root {
     color: #000000;
     text-decoration: none;
     margin: 15px;
@@ -16,8 +16,8 @@
     border-radius: 100px;
 }
 
-.icon{
-    padding-left:0;
+.icon {
+    padding-left: 0;
     display: flex;
     vertical-align: middle;
     justify-content: center;

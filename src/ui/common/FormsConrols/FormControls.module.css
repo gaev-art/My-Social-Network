@@ -13,16 +13,17 @@
     color: indianred;
 }
 
-.inputForm{
+.inputForm {
     width: 600px;
 }
+
 @media (max-width: 760px) {
     .inputForm {
         width: 80%
     }
 }
 
-.formControl textarea   {
+.formControl textarea {
     width: 600px;
 }
 

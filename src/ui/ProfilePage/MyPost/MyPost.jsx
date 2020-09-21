@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './MyPost.module.css'
 import Post from './Post/Post';
 import {Field, reduxForm} from 'redux-form';
 import {maxLengthCreator, required} from '../../../utils/validators/validators';
@@ -21,7 +20,7 @@ function AddNewPost(props) {
     </form>;
 }
 
-let AddNewPostFormRedux = reduxForm({form: 'profileAddNewPostForm'})(AddNewPost)
+let AddNewPostForm = reduxForm({form: 'profileAddNewPostForm'})(AddNewPost)
 
 const MyPost = React.memo((props) => {
 
@@ -32,8 +31,7 @@ const MyPost = React.memo((props) => {
             fullName={props.fullName}
             photo={props.photo}
             key={p.id}
-            post={p}
-        />)
+            post={p}/>)
 
 
     let addPost = (values) => {
@@ -42,13 +40,10 @@ const MyPost = React.memo((props) => {
 
 
     return (
-        <div className={s.postBlock}>
+        <div>
             <h3>My post</h3>
-            <AddNewPostFormRedux
-                onSubmit={addPost}/>
-            <div className={s.posts}>
-                {postsElement}
-            </div>
+            <AddNewPostForm onSubmit={addPost}/>
+            {postsElement}
         </div>
     )
 });

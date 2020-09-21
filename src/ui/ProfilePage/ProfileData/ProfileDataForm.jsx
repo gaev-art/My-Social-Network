@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './ProfileData.module.css';
+import style from './ProfileData.module.css';
 import {renderCheckbox, renderTextField, Textarea} from '../../common/FormsConrols/FormControls';
 import {Field, reduxForm} from 'redux-form';
 import Button from '@material-ui/core/Button';
@@ -19,7 +19,7 @@ const ProfileDataForm = (props) => {
         <div>
             <Field name="fullName" component={renderTextField} label="Full name"/>
         </div>
-        <div >
+        <div>
             <b>About Me</b>:
             <Field
                 type="text"
@@ -49,7 +49,7 @@ const ProfileDataForm = (props) => {
             </div>
         })}
         </div>
-        {props.error && <div className={s.formSummaryError}>
+        {props.error && <div className={style.formSummaryError}>
             {props.error}
         </div>}
         <div>

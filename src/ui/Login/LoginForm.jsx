@@ -6,16 +6,16 @@ import {renderLoginField} from '../common/FormsConrols/FormControls';
 
 
 const LoginForm = props => {
-    const { handleSubmit } = props
+    const {handleSubmit} = props
     return (
         <form onSubmit={handleSubmit}>
             <div>
                 <Field name="login" component={renderLoginField} label="Login"/>
             </div>
             <div>
-                <Field type='password' name="password" component={renderLoginField} label="Password" />
+                <Field type='password' name="password" component={renderLoginField} label="Password"/>
             </div>
-            <div />
+            <div/>
             {props.captchaUrl && <div>
                 <img alt='' src={props.captchaUrl}/>
                 <Field
@@ -26,7 +26,7 @@ const LoginForm = props => {
                     validate={required}/>
             </div>
             }
-            <div style={{margin:'10px'}}>
+            <div style={{margin: '10px'}}>
                 <Button color="secondary" type="submit">Login</Button>
             </div>
         </form>

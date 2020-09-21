@@ -11,7 +11,7 @@ import {
     updateStatus
 } from '../../bll/profileReducer';
 import {withRouter} from 'react-router-dom';
-import {WithAuthRedirect} from '../Hoc/WithAuthRedirect';
+import {WithAuthRedirect} from '../common/Hoc/WithAuthRedirect';
 
 
 class ProfileContainer extends React.Component {

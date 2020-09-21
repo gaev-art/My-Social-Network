@@ -2,7 +2,7 @@ import React from 'react';
 import Dialogs from './Dialogs';
 import {compose} from 'redux';
 import {connect} from 'react-redux';
-import {WithAuthRedirect} from '../Hoc/WithAuthRedirect';
+import {WithAuthRedirect} from '../common/Hoc/WithAuthRedirect';
 import {
     deleteMessage,
     getDialogs,

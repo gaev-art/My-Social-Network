@@ -6,7 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import Menu from '@material-ui/core/Menu';
-import MoreIcon from '@material-ui/icons/MoreVert';
+import MenuIcon from '@material-ui/icons/Menu';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import style from './Header.module.css';
@@ -188,7 +188,7 @@ export default function Header(props) {
                             onClick={handleMobileMenuOpen}
                             color="inherit"
                         >
-                            <MoreIcon/>
+                            <MenuIcon/>
                         </IconButton>
                     </div>
                 </Toolbar>

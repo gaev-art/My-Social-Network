@@ -3,6 +3,11 @@ export const required = value => {
     return 'Filed is required'
 
 }
+export const requiredMessage = value => {
+    if (value) return undefined
+    return 'Enter your message'
+
+}
 
 export const maxLengthCreator = (maxLength) => (value) => {
     if (value.length > 30) return `Max length is ${maxLength} symbols`

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getFriends, removeFriend} from '../../bll/friendsReducer';
-import {WithAuthRedirect} from '../Hoc/WithAuthRedirect';
+import {WithAuthRedirect} from '../common/Hoc/WithAuthRedirect';
 import {Friends} from './Friends';
 import {startDialogs} from '../../bll/dialogsReducer';
 

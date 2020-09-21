@@ -1,7 +1,7 @@
 import React from 'react';
 import {Users} from './Users';
 import {connect} from 'react-redux';
-import {WithAuthRedirect} from '../Hoc/WithAuthRedirect';
+import {WithAuthRedirect} from '../common/Hoc/WithAuthRedirect';
 import {compose} from 'redux';
 import {
     follow,

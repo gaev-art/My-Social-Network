@@ -1,4 +1,4 @@
-import {required} from '../../utils/validators/validators';
+import {requiredMessage} from '../../utils/validators/validators';
 import {Field, reduxForm} from 'redux-form';
 import {Textarea} from '../common/FormsConrols/FormControls';
 import React from 'react';
@@ -12,7 +12,7 @@ function AddMessageForm(props) {
                 name={'newMessageBody'}
                 placeholder='Enter your message'
                 component={Textarea}
-                validate={[required]}
+                validate={[requiredMessage]}
             />
         </div>
         <div>
